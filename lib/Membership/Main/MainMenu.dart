@@ -1,8 +1,6 @@
 import 'package:amtelbot/Membership/Main/Cart.dart';
 import 'package:amtelbot/Membership/Main/EmptyCart.dart';
-import 'package:amtelbot/Membership/Main/RemoveProduct.dart';
 import 'package:flutter/material.dart';
-import 'CartNumberDisplay.dart';
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
 import 'package:amtelbot/Membership/Log In/MemberAccount.dart';
 import 'Product.dart';
@@ -37,11 +35,11 @@ void addToCart(Product product) {
     });
   }
 
-  void navigateNextPage(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Cartnumberdisplay();
-}));
-}
+//   void navigateNextPage(BuildContext ctx) {
+//     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+//       return Cart(cart: cart);
+// }));
+// }
 
 void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
@@ -58,12 +56,6 @@ void navigateNextPage3(BuildContext ctx) {
 void navigateNextPage4(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Emptycart();
-}));
-}
-
-void navigateNextPage5(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Removeproduct();
 }));
 }
 
@@ -183,49 +175,51 @@ void navigateNextPage6(BuildContext ctx) {
                   ),
                 ),
               ),
-            Positioned(
-                left: 1178,
-                top: 43,
-                child:
-              TextButton(
-              onPressed:  () {navigateNextPage5(context);},
-              style:  TextButton.styleFrom (
-              padding:  EdgeInsets.zero,
-              ),
-                child: Container(
-                  width: 182,
-                  height: 72,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0xFF3197FD),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                ), 
-                ),
-              ),
-            ),
+            
+            // Remove
+            // Positioned(
+            //     left: 1178,
+            //     top: 43,
+            //     child:
+            //   TextButton(
+            //   onPressed:  () {navigateNextPage5(context);},
+            //   style:  TextButton.styleFrom (
+            //   padding:  EdgeInsets.zero,
+            //   ),
+            //     child: Container(
+            //       width: 182,
+            //       height: 72,
+            //       decoration: ShapeDecoration(
+            //         color: Colors.white,
+            //         shape: RoundedRectangleBorder(
+            //           borderRadius: BorderRadius.circular(15),
+            //         ),
+            //         shadows: [
+            //           BoxShadow(
+            //             color: Color(0xFF3197FD),
+            //             blurRadius: 4,
+            //             offset: Offset(0, 4),
+            //             spreadRadius: 0,
+            //           )
+            //         ],
+            //     ), 
+            //     ),
+            //   ),
+            // ),
 
-              Positioned(
-                left: 1208,
-                top: 60,
-                child: Text(
-                  'Remove',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 32,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   left: 1208,
+              //   top: 60,
+              //   child: Text(
+              //     'Remove',
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontSize: 32,
+              //       fontFamily: 'Inter',
+              //       fontWeight: FontWeight.w400,
+              //     ),
+              //   ),
+              // ),
               Positioned(
                 left: 190,
                 top: 35,
@@ -243,7 +237,7 @@ void navigateNextPage6(BuildContext ctx) {
                 left: 1409,
                 top: 29,
                 child: TextButton(
-                      onPressed:  () {navigateNextPage4(context);},
+                      onPressed:  () {navigateNextPage6(context);},
                       style:  TextButton.styleFrom (
                       padding:  EdgeInsets.zero,
                       ), 
@@ -301,22 +295,16 @@ void navigateNextPage6(BuildContext ctx) {
                       myController.clear();
                     },
                   ),
-
                 ),
               ),
             
-            //enter button
-            Positioned(
+            // enter button
+              Positioned(
                 left: 1336,
                 top: 157,
                 child:
               TextButton(
-              onPressed:  () {if (currentProduct != null) {
-                      addToCart(currentProduct!); // Add the current product to the cart
-                      setState(() {
-                        currentProduct = null; // Clear the current product
-                      });
-                    }},
+              onPressed:  () {},
               style:  TextButton.styleFrom (
               padding:  EdgeInsets.zero,
               ),
@@ -341,7 +329,6 @@ void navigateNextPage6(BuildContext ctx) {
               ),
             ),
 
-          
               Positioned(
                 left: 1378,
                 top: 171,
@@ -356,13 +343,18 @@ void navigateNextPage6(BuildContext ctx) {
                 ),
               ),
 
-              // add to cart button
-              Positioned(
+            //enter button
+            Positioned(
                 left: 714,
                 top: 737,
                 child:
               TextButton(
-              onPressed:  () {navigateNextPage6(context);},
+              onPressed:  () {if (currentProduct != null) {
+                      addToCart(currentProduct!); // Add the current product to the cart
+                      setState(() {
+                        currentProduct = null; // Clear the current product
+                      });
+                    }},
               style:  TextButton.styleFrom (
               padding:  EdgeInsets.zero,
               ),

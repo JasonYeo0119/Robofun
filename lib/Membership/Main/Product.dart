@@ -16,7 +16,7 @@ class Product {
 
 // Create a list of products
 List<Product> products = [
-  Product(barcode: '00003056', name: 'Nestle Milo Powder 1kg', price: 15.99, quantity: 1),
-  Product(barcode: '9555928606106', name: 'TnG Top up', price: 999.99, quantity: 1),
+  Product(barcode: '12345', name: 'Nestle Milo Powder 1kg', price: 15.99, quantity: 1),
+  Product(barcode: '67890', name: 'TnG Top up', price: 999.99, quantity: 1),
   // Add more products here
 ];

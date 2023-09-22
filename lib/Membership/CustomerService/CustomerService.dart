@@ -1,3 +1,5 @@
+import 'package:amtelbot/Membership/Log In/MemberAccount.dart';
+import 'package:amtelbot/Membership/Main/MainMenu.dart';
 import 'package:flutter/material.dart';
 import 'AboutUs.dart';
 import 'ContactStaff.dart';
@@ -36,10 +38,24 @@ void navigateNextPage5(BuildContext ctx) {
 }));
 }
 
+void navigateNextPage6(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Mainmenu();
+}));
+}
+
+void navigateNextPage7(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return MemberAccount();
+}));
+}
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return MaterialApp( 
+      home: Scaffold( 
+        body: Column(
+          children: [
         Container(
           width: 1550,
           height: 864,
@@ -84,6 +100,11 @@ void navigateNextPage5(BuildContext ctx) {
               Positioned(
                 left: 24,
                 top: 729,
+                child: TextButton(
+                      onPressed:  () {navigateNextPage7(context);},
+                      style:  TextButton.styleFrom (
+                      padding:  EdgeInsets.zero,
+                      ), 
                 child: Container(
                   width: 90,
                   height: 90,
@@ -93,6 +114,7 @@ void navigateNextPage5(BuildContext ctx) {
                       fit: BoxFit.contain,
                     ),
                   ),
+                ),
                 ),
               ),
               Positioned(
@@ -111,6 +133,11 @@ void navigateNextPage5(BuildContext ctx) {
               Positioned(
                 left: 24,
                 top: 172,
+                child: TextButton(
+                      onPressed:  () {navigateNextPage6(context);},
+                      style:  TextButton.styleFrom (
+                      padding:  EdgeInsets.zero,
+                      ), 
                 child: Container(
                   width: 90,
                   height: 90,
@@ -120,6 +147,7 @@ void navigateNextPage5(BuildContext ctx) {
                       fit: BoxFit.contain,
                     ),
                   ),
+                ),
                 ),
               ),
               Positioned(
@@ -491,6 +519,8 @@ void navigateNextPage5(BuildContext ctx) {
           ),
         ),
       ],
+    )
+      )
     );
   }
 }

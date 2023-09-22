@@ -1,14 +1,35 @@
-import 'package:amtelbot/Membership/Main/CartNumberDisplay.dart';
 import 'package:amtelbot/Membership/Main/MainMenu.dart';
 import 'package:amtelbot/Membership/Payment/Payment1.dart';
 import 'package:flutter/material.dart';
 import 'Product.dart';
 
-class Cart extends StatelessWidget {
+class Cart extends StatefulWidget {
 
   final List<Product> cart;
 
   Cart({required this.cart});
+  
+  @override
+  _CartState createState() => _CartState();
+}
+
+class _CartState extends State<Cart> {
+  List<Product> cart = [];
+  int calculateTotalQuantity() {
+  int totalQuantity = 0;
+  for (var product in widget.cart) {
+    totalQuantity += product.quantity;
+  }
+  return totalQuantity;
+}
+
+double calculateTotalPrice() {
+  double totalPrice = 0.0;
+  for (var product in widget.cart) {
+    totalPrice += (product.quantity * product.price);
+  }
+  return totalPrice;
+}
 
     void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
@@ -18,14 +39,22 @@ class Cart extends StatelessWidget {
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment1();
+      double totalPrice = calculateTotalPrice(); 
+    return Payment1(totalPrice: totalPrice,);
   }));
   }
 
+  void updateCart() {
+    setState(() {}); // This will trigger a rebuild of the widget
+  }
+
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return MaterialApp( 
+      home: Scaffold( 
+        body: Column(
+          children: [
         Container(
           width: 1550,
           height: 864,
@@ -75,31 +104,57 @@ class Cart extends StatelessWidget {
                   ),
                 ),
               ),
- // Display selected products in the cart
-    Positioned(
-      left: 120,
-      top: 120,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Text(
-            'Cart Items:',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          SizedBox(height: 10),
-          for (var product in cart)
-            Text(
-              '${product.name} ${product.quantity} x RM ${product.price.toStringAsFixed(2)}',
-              style: TextStyle(
-                fontSize: 18,
+      // Display selected products in the cart
+        Positioned(
+          left: 120,
+          top: 120,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Cart Items:',
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
-            ),
-        ],
-      ),
-    ),
+              SizedBox(height: 10),
+              for (var product in widget.cart)
+                Row(
+                  children: [
+                    Text(
+                  '${product.name}',
+                  style: TextStyle(
+                    color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                  ),
+                ),
+                SizedBox(width: 500), // Add extra spacing here
+                Text(
+                  '${product.quantity} x RM ${product.price.toStringAsFixed(2)}',
+                  style: TextStyle(
+                    color: Colors.black,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold,
+                  ),
+                ),
+                    IconButton(
+                      icon: Icon(Icons.remove),
+                      onPressed: () {
+                        // Remove the product from the cart
+                        widget.cart.remove(product);
+                        // Call the updateCart method to trigger a rebuild
+                        updateCart();
+                      },
+                    ),
+                  ],
+                ),
+            ],
+          ),
+        ),
+
+          
 
               // Back
               Positioned(
@@ -209,33 +264,33 @@ class Cart extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 137,
-                top: 777,
-                child: Text(
-                  'Item: 3',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 4,
-                  ),
+              left: 137,
+              top: 777,
+              child: Text(
+                'Item: ${calculateTotalQuantity()}',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 40,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 4,
                 ),
               ),
+            ),
               Positioned(
-                left: 483,
-                top: 777,
-                child: Text(
-                  'Total: RM 24.54',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                    letterSpacing: 4,
-                  ),
-                ),
-              ),
+  left: 483,
+  top: 777,
+  child: Text(
+    'Total: RM ${calculateTotalPrice().toStringAsFixed(2)}',
+    style: TextStyle(
+      color: Colors.black,
+      fontSize: 40,
+      fontFamily: 'Inter',
+      fontWeight: FontWeight.w400,
+      letterSpacing: 4,
+    ),
+  ),
+),
               Positioned(
                 left: 374,
                 top: 24,
@@ -261,6 +316,8 @@ class Cart extends StatelessWidget {
           ),
         ),
       ],
+    )
+      )
     );
   }
 }

@@ -5,15 +5,16 @@ import 'package:amtelbot/Membership/Payment/PaymentQR.dart';
 import 'package:flutter/material.dart';
 
 class Payment2 extends StatelessWidget {
+
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment1();
+      return Payment1(totalPrice: 0.0,);
   }));
   }
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment3();
+      return Payment3(totalPrice: 0.0,);
   }));
   }
 
@@ -124,6 +125,11 @@ class Payment2 extends StatelessWidget {
               Positioned(
                 left: -262,
                 top: 151,
+                child: TextButton(
+                  onPressed:  () {navigateNextPage(context);},
+                  style:  TextButton.styleFrom (
+                  padding:  EdgeInsets.zero,
+                  ),
                 child: Container(
                   width: 524,
                   height: 561,
@@ -141,6 +147,7 @@ class Payment2 extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
                 ),
               ),
               Positioned(
@@ -174,6 +181,11 @@ class Payment2 extends StatelessWidget {
               Positioned(
                 left: 1288,
                 top: 151,
+                child: TextButton(
+                  onPressed:  () {navigateNextPage2(context);},
+                  style:  TextButton.styleFrom (
+                  padding:  EdgeInsets.zero,
+                  ),
                 child: Container(
                   width: 524,
                   height: 561,
@@ -191,6 +203,7 @@ class Payment2 extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
                 ),
               ),
               Positioned(

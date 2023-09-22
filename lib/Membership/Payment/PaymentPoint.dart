@@ -3,9 +3,25 @@ import 'package:amtelbot/Membership/Payment/PaymentSuccessful.dart';
 import 'package:flutter/material.dart';
 
 class Paymentpoint extends StatelessWidget {
+  final double totalPrice; 
+
+  Paymentpoint({required this.totalPrice});
+
+  // Calculate transaction point based on total price
+  double calculateTransactionPoint(double totalPrice) {
+    // Assuming you want to multiply the total price by 10
+    return totalPrice * 10;
+  }
+
+   // Calculate point balance
+  double calculatePointBalance(double availablePoint, double transactionPoint) {
+    // Subtract transaction point from available point
+    return availablePoint - transactionPoint;
+  }
+
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment3();
+      return Payment3(totalPrice: totalPrice,);
   }));
   }
 
@@ -17,6 +33,14 @@ class Paymentpoint extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double transactionPoint = calculateTransactionPoint(totalPrice);
+
+    // Sample available point value (you can replace this with your actual logic)
+    double availablePoint = 512.30;
+
+    // Calculate point balance
+    double pointBalance = calculatePointBalance(availablePoint, transactionPoint);
+
     return Column(
       children: [
         Container(
@@ -224,7 +248,7 @@ class Paymentpoint extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: '245.40\n',
+                          text: '${transactionPoint.toStringAsFixed(2)}\n',
                           style: TextStyle(
                             color: Color(0xFFFF0000),
                             fontSize: 36,
@@ -246,7 +270,7 @@ class Paymentpoint extends StatelessWidget {
                           ),
                         ),
                         TextSpan(
-                          text: ' 266.90',
+                          text: '${pointBalance.toStringAsFixed(2)}',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 36,

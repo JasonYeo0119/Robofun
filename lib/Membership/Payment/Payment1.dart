@@ -5,6 +5,10 @@ import 'package:amtelbot/Membership/Payment/PaymentDebit.dart';
 import 'package:flutter/material.dart';
 
 class Payment1 extends StatelessWidget {
+  final double totalPrice; // Pass the total price as a parameter
+
+  Payment1({required this.totalPrice});
+  
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Payment2();
@@ -13,7 +17,7 @@ class Payment1 extends StatelessWidget {
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment3();
+      return Payment3(totalPrice: totalPrice);
   }));
   }
 
@@ -25,7 +29,7 @@ class Payment1 extends StatelessWidget {
 
   void navigateNextPage4(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Paymentdebit();
+      return Paymentdebit(totalPrice: totalPrice);
   }));
   }
 
@@ -151,6 +155,11 @@ class Payment1 extends StatelessWidget {
               Positioned(
                 left: 1288,
                 top: 151,
+                child: TextButton(
+                  onPressed:  () {navigateNextPage(context);},
+                  style:  TextButton.styleFrom (
+                  padding:  EdgeInsets.zero,
+                  ),
                 child: Container(
                   width: 524,
                   height: 561,
@@ -168,6 +177,7 @@ class Payment1 extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
                 ),
               ),
               Positioned(

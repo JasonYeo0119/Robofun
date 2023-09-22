@@ -1,12 +1,13 @@
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
-import 'package:amtelbot/Membership/Main/CartNumberDisplay.dart';
+import 'package:amtelbot/Membership/Main/Cart.dart';
+import 'package:amtelbot/Membership/Main/MainMenu.dart';
 import 'package:flutter/material.dart';
 
 class MemberAccount extends StatelessWidget {
 
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Cartnumberdisplay();
+      return Mainmenu();
 }));
 }
 

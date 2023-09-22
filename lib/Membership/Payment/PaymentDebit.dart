@@ -1,10 +1,15 @@
 import 'package:amtelbot/Membership/Payment/Payment1.dart';
+import 'package:amtelbot/Membership/Main/Cart.dart';
 import 'package:flutter/material.dart';
 
 class Paymentdebit extends StatelessWidget {
+  final double totalPrice; 
+
+  Paymentdebit({required this.totalPrice});
+
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment1();
+      return Payment1(totalPrice: totalPrice,);
   }));
   }
 
@@ -121,20 +126,36 @@ class Paymentdebit extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 671,
-                top: 286,
-                child: Text(
-                  'RM 24.54',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                    letterSpacing: 7.40,
-                  ),
-                ),
-              ),
+
+  Positioned(
+  left: 671,
+  top: 286,
+  child: Row(
+    children: [
+      Text(
+        'RM',
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 40,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w700,
+          letterSpacing: 7.40,
+        ),
+      ),
+      Text(
+        totalPrice.toStringAsFixed(2), // Display the totalPrice value here
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 40,
+          fontFamily: 'Inter',
+          fontWeight: FontWeight.w700,
+          letterSpacing: 7.40,
+        ),
+      ),
+    ],
+  ),
+),
+
             ],
           ),
         ),

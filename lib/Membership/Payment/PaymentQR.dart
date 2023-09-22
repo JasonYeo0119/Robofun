@@ -2,6 +2,7 @@ import 'package:amtelbot/Membership/Payment/Payment2.dart';
 import 'package:flutter/material.dart';
 
 class Paymentqr extends StatelessWidget {
+  
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Payment2();
@@ -79,11 +80,39 @@ class Paymentqr extends StatelessWidget {
                 ),
               ),
             ),
+            //             Positioned(
+            //   left: 671,
+            //   top: 100,
+            //   child: Row(
+            //     children: [
+            //       Text(
+            //         'RM',
+            //         style: TextStyle(
+            //           color: Colors.black,
+            //           fontSize: 40,
+            //           fontFamily: 'Inter',
+            //           fontWeight: FontWeight.w700,
+            //           letterSpacing: 7.40,
+            //         ),
+            //       ),
+            //       Text(
+            //         totalPrice.toStringAsFixed(2), // Display the totalPrice value here
+            //         style: TextStyle(
+            //           color: Colors.black,
+            //           fontSize: 40,
+            //           fontFamily: 'Inter',
+            //           fontWeight: FontWeight.w700,
+            //           letterSpacing: 7.40,
+            //         ),
+            //       ),
+            //     ],
+            //   ),
+            // ),
             Positioned(
                 left: 55,
                 top: 47,
                 child: Text(
-                  'Please show the QR Code to the camera:',
+                  'Please show your Payment code to the scanner:',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 48,
