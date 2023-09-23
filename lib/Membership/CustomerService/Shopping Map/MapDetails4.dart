@@ -1,5 +1,6 @@
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
 import 'package:flutter/material.dart';
+import 'ShoppingMap.dart';
 
 class Mapdetails4 extends StatelessWidget {
   void navigateNextPage(BuildContext ctx) {
@@ -7,6 +8,12 @@ class Mapdetails4 extends StatelessWidget {
       return Customerservice();
 }));
 }
+
+void navigateNextPage2(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Shoppingmap();
+    }));
+  }
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -82,6 +89,13 @@ class Mapdetails4 extends StatelessWidget {
               Positioned(
                 left: 327,
                 top: 213,
+                child: TextButton(
+                  onPressed: () {
+                    navigateNextPage2(context);
+                  },
+                  style: TextButton.styleFrom(
+                    padding: EdgeInsets.zero,
+                  ),
                 child: Opacity(
                   opacity: 0.20,
                   child: Container(
@@ -99,6 +113,7 @@ class Mapdetails4 extends StatelessWidget {
                       ],
                     ),
                   ),
+                ),
                 ),
               ),
               Positioned(

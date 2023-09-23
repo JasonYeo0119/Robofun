@@ -6,6 +6,10 @@ import 'package:amtelbot/Membership/Log In/MemberAccount.dart';
 import 'Product.dart';
 
 class Mainmenu extends StatefulWidget {
+  final List<Product> cart;
+
+  Mainmenu({required this.cart});
+
   @override
   _MainmenuState createState() => _MainmenuState();
 }
@@ -53,11 +57,11 @@ void navigateNextPage3(BuildContext ctx) {
 }));
 }
 
-void navigateNextPage4(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Emptycart();
-}));
-}
+// void navigateNextPage4(BuildContext ctx) {
+//     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+//       return Emptycart();
+// }));
+// }
 
 void navigateNextPage6(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {

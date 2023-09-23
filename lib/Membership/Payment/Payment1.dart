@@ -11,7 +11,7 @@ class Payment1 extends StatelessWidget {
   
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment2();
+      return Payment2(totalPrice: totalPrice);
   }));
   }
 
@@ -23,7 +23,8 @@ class Payment1 extends StatelessWidget {
 
   void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Cart(cart: [],);
+      var updatedCart;
+      return Cart(cart: []);
   }));
   }
 

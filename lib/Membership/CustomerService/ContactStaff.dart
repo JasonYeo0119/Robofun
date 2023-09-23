@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Contactstaff extends StatelessWidget {
   void navigateNextPage(BuildContext ctx) {
@@ -7,10 +8,34 @@ class Contactstaff extends StatelessWidget {
       return Customerservice();
 }));
 }
+
+void navigateNextPage2(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Customerservice();
+}));
+}
+
+void _launchPhoneCall() async {
+  const phoneNumber = '1234567890'; // Replace with the actual phone number
+  final url = 'tel:$phoneNumber';
+
+  try {
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  } catch (e) {
+    print('Error launching phone call: $e');
+  }
+}
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return MaterialApp( 
+      home: Scaffold( 
+        body: Column(
+          children: [
         Container(
           width: 1550,
           height: 864,
@@ -39,42 +64,62 @@ class Contactstaff extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 1198,
-                top: 494,
+              // Positioned(
+              //   left: 1198,
+              //   top: 494,
+              //   child: Container(
+              //     width: 304,
+              //     height: 88,
+              //     decoration: ShapeDecoration(
+              //       color: Color(0xFFEC2222),
+              //       shape: RoundedRectangleBorder(
+              //         borderRadius: BorderRadius.circular(15),
+              //       ),
+              //       shadows: [
+              //         BoxShadow(
+              //           color: Color(0x3F000000),
+              //           blurRadius: 4,
+              //           offset: Offset(0, 4),
+              //           spreadRadius: 0,
+              //         )
+              //       ],
+              //   ),
+              //   ),
+              // ),
+
+             // Button to initiate the call
+            Positioned(
+              left: 1198,
+              top: 494,
+              child: ElevatedButton(
+                onPressed: () => navigateNextPage2(context),
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.red, // Set the background color to red
+                  padding: EdgeInsets.zero,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  shadowColor: Color(0x3F000000),
+                  elevation: 2,
+                ),
                 child: Container(
                   width: 304,
                   height: 88,
-                  decoration: ShapeDecoration(
-                    color: Color(0xFFEC2222),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
+                  child: Center(
+                    child: Text(
+                      'Call Staff',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 40,
+                        fontFamily: 'Inter',
+                        fontWeight: FontWeight.w400,
+                      ),
                     ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                ),
-                ),
-              ),
-
-              Positioned(
-                left: 1265,
-                top: 514,
-                child: Text(
-                  'Call staff',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 40,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
+            ),
+
               Positioned(
                 left: 1198,
                 top: 611,
@@ -909,6 +954,8 @@ class Contactstaff extends StatelessWidget {
           ),
         ),
       ],
+    )
+      )
     );
   }
 }

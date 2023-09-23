@@ -4,7 +4,8 @@ import 'package:amtelbot/Membership/Main/MainMenu.dart';
 class Verificationsuccessful extends StatelessWidget {
     void navigateNextPage(BuildContext ctx) {
       Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-        return Mainmenu();
+        var updatedCart;
+        return Mainmenu(cart: []);
   }));
   }
   @override

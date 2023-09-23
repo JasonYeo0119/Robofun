@@ -40,7 +40,8 @@ void navigateNextPage5(BuildContext ctx) {
 
 void navigateNextPage6(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenu();
+      var updateCart;
+      return Mainmenu(cart: []);
 }));
 }
 

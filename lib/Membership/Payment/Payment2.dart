@@ -5,28 +5,32 @@ import 'package:amtelbot/Membership/Payment/PaymentQR.dart';
 import 'package:flutter/material.dart';
 
 class Payment2 extends StatelessWidget {
+  final double totalPrice; // Pass the total price as a parameter
+
+  Payment2({required this.totalPrice});
 
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment1(totalPrice: 0.0,);
+      return Payment1(totalPrice: totalPrice,);
   }));
   }
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment3(totalPrice: 0.0,);
+      return Payment3(totalPrice: totalPrice,);
   }));
   }
 
     void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Cart(cart: [],);
+      var updatedCart;
+      return Cart(cart: []);
   }));
   }
 
   void navigateNextPage4(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Paymentqr();
+      return Paymentqr(totalPrice: totalPrice,);
   }));
   }
 

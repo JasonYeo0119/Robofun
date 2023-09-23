@@ -957,11 +957,11 @@ class Mapdetails1 extends StatelessWidget {
               Positioned(
                 left: 26,
                 top: 743,
-                child: TextButton(
+                child: ElevatedButton(
                   onPressed: () {
                     navigateNextPage(context);
                   },
-                  style: TextButton.styleFrom(
+                  style: ElevatedButton.styleFrom(
                     padding: EdgeInsets.zero,
                   ),
                   child: Container(

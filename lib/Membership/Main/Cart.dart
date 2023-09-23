@@ -33,7 +33,7 @@ double calculateTotalPrice() {
 
     void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenu();
+      return Mainmenu(cart: cart,);
   }));
   }
 
@@ -130,7 +130,7 @@ double calculateTotalPrice() {
                         fontWeight: FontWeight.bold,
                   ),
                 ),
-                SizedBox(width: 500), // Add extra spacing here
+                SizedBox(width: 30), // Add extra spacing here
                 Text(
                   '${product.quantity} x RM ${product.price.toStringAsFixed(2)}',
                   style: TextStyle(

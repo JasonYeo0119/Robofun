@@ -265,16 +265,23 @@ class Givefeedback3 extends StatelessWidget {
                     padding: EdgeInsets.zero,
                   ),
                   child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            NetworkImage("https://via.placeholder.com/90x90"),
-                        fit: BoxFit.contain,
-                      ),
+                  width: 100,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Color.fromARGB(255, 255, 247, 0),
+                    shape: StarBorder(
+
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0xFF3197FD),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
+                ),
                 ),
               ),
 
@@ -290,16 +297,23 @@ class Givefeedback3 extends StatelessWidget {
                     padding: EdgeInsets.zero,
                   ),
                   child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            NetworkImage("https://via.placeholder.com/90x90"),
-                        fit: BoxFit.contain,
-                      ),
+                  width: 100,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Color.fromARGB(255, 255, 247, 0),
+                    shape: StarBorder(
+
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0xFF3197FD),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
+                ),
                 ),
               ),
 
@@ -308,13 +322,21 @@ class Givefeedback3 extends StatelessWidget {
                 left: 417,
                 top: 193,
                 child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
+                  width: 100,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Color.fromARGB(255, 255, 247, 0),
+                    shape: StarBorder(
+
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0xFF3197FD),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
                 ),
               ),
@@ -331,16 +353,23 @@ class Givefeedback3 extends StatelessWidget {
                     padding: EdgeInsets.zero,
                   ),
                   child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            NetworkImage("https://via.placeholder.com/90x90"),
-                        fit: BoxFit.contain,
-                      ),
+                  width: 100,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFFB2B2AA),
+                    shape: StarBorder(
+
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0xFF3197FD),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
+                ),
                 ),
               ),
 
@@ -356,16 +385,23 @@ class Givefeedback3 extends StatelessWidget {
                     padding: EdgeInsets.zero,
                   ),
                   child: Container(
-                    width: 120,
-                    height: 120,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image:
-                            NetworkImage("https://via.placeholder.com/90x90"),
-                        fit: BoxFit.contain,
-                      ),
+                  width: 100,
+                  height: 100,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFFB2B2AA),
+                    shape: StarBorder(
+
                     ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0xFF3197FD),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      )
+                    ],
                   ),
+                ),
                 ),
               ),
 
