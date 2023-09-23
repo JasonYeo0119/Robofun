@@ -1,15 +1,14 @@
-import 'package:amtelbot/Membership/Main/MainMenu.dart';
+import 'MainMenu2.dart';
 import 'package:flutter/material.dart';
-import 'Product.dart';
+import 'package:amtelbot/Membership/Main/Product.dart';
 
-class Emptycart extends StatelessWidget {
+class Emptycart2 extends StatelessWidget {
   final List<Product> cart;
 
-  Emptycart({required this.cart});
-
+  Emptycart2({required this.cart});
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenu(cart: cart,);
+      return Mainmenu2(cart: cart,);
 }));
 }
 

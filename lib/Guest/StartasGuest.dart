@@ -1,11 +1,11 @@
 import 'package:amtelbot/homepage/homepage.dart';
 import 'package:flutter/material.dart';
-import 'package:amtelbot/Guest/MainMenuNoMember.dart';
+import 'MainMenu2.dart';
 
 class Startasguest extends StatelessWidget {
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenunomember();
+      return Mainmenu2(cart: [],);
 }));
   }
 
