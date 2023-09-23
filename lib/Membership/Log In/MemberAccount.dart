@@ -7,7 +7,8 @@ class MemberAccount extends StatelessWidget {
 
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenu();
+      var updatedCart;
+      return Mainmenu(cart: []);
 }));
 }
 
@@ -832,6 +833,18 @@ void navigateNextPage2(BuildContext ctx) {
                     fontSize: 24,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 9,
+                top: 714,
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: ShapeDecoration(
+                    color: Color(0xFF2069BE),
+                    shape: OvalBorder(),
                   ),
                 ),
               ),

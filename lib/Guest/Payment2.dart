@@ -1,7 +1,7 @@
-import 'package:amtelbot/Membership/Main/Cart.dart';
-import 'package:amtelbot/Membership/Payment/Payment1.dart';
-import 'package:amtelbot/Membership/Payment/Payment3.dart';
-import 'package:amtelbot/Membership/Payment/PaymentQR.dart';
+import 'Cart2.dart';
+import 'Payment1.dart';
+import 'Payment3.dart';
+import 'PaymentQR2.dart';
 import 'package:flutter/material.dart';
 
 class Payment2 extends StatelessWidget {
@@ -23,14 +23,13 @@ class Payment2 extends StatelessWidget {
 
     void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      var updatedCart;
-      return Cart(cart: []);
+      return Cart2(cart: []);
   }));
   }
 
   void navigateNextPage4(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Paymentqr(totalPrice: totalPrice,);
+      return Paymentqr2(totalPrice: totalPrice,);
   }));
   }
 

@@ -10,58 +10,58 @@ class VerificationPage extends StatefulWidget {
 }
 
 class _VerificationPageState extends State<VerificationPage> {
-  late CameraController cameraController;
-  late List<CameraDescription> cameras;
-  late Future<void> _initializeControllerFuture; // Initialize this future
+  // late CameraController cameraController;
+  // late List<CameraDescription> cameras;
+  // late Future<void> _initializeControllerFuture; // Initialize this future
 
 
-  @override
-  void initState() {
-    startCamera();
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   startCamera();
+  //   super.initState();
+  // }
 
-  void startCamera() async {
-    cameras = await availableCameras();
+  // void startCamera() async {
+  //   cameras = await availableCameras();
 
-    cameraController = CameraController(
-      cameras[0],
-      ResolutionPreset.high,
-      enableAudio: false,
-    );
+  //   cameraController = CameraController(
+  //     cameras[0],
+  //     ResolutionPreset.high,
+  //     enableAudio: false,
+  //   );
 
-    await cameraController.initialize().then((value) {
-      if(!mounted) {
-        return;
-      }
-      setState(() {}); //To refresh widget
-    }).catchError((e) {
-      print(e);
-    });
+  //   await cameraController.initialize().then((value) {
+  //     if(!mounted) {
+  //       return;
+  //     }
+  //     setState(() {}); //To refresh widget
+  //   }).catchError((e) {
+  //     print(e);
+  //   });
 
-    _initializeControllerFuture = cameraController.initialize();
-  }
+  //   _initializeControllerFuture = cameraController.initialize();
+  // }
 
-  @override
-  void dispose() {
-    cameraController.dispose();
-    super.dispose();
-  }
+  // @override
+  // void dispose() {
+  //   cameraController.dispose();
+  //   super.dispose();
+  // }
 
-  void _takePicture() async {
-    try {
-      // Ensure the camera is initialized
-      await _initializeControllerFuture;
+  // void _takePicture() async {
+  //   try {
+  //     // Ensure the camera is initialized
+  //     await _initializeControllerFuture;
 
-      // Take a picture and save it to a file
-      final XFile picture = await cameraController.takePicture();
+  //     // Take a picture and save it to a file
+  //     final XFile picture = await cameraController.takePicture();
 
-      // Do something with the captured picture
-      // For example, you can display it or process it further.
-    } catch (e) {
-      print(e);
-    }
-  }
+  //     // Do something with the captured picture
+  //     // For example, you can display it or process it further.
+  //   } catch (e) {
+  //     print(e);
+  //   }
+  // }
 
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
@@ -399,7 +399,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 left: 1056,
                 top: 728,
                 child: TextButton(
-                  onPressed:  () {navigateNextPage2(context);},
+                  onPressed:  () {navigateNextPage(context);},
                   style:  TextButton.styleFrom (
                     padding:  EdgeInsets.zero,
                   ),
@@ -437,50 +437,50 @@ class _VerificationPageState extends State<VerificationPage> {
                   ),
                 ),
               ),
-              // Add a CameraPreview widget to display the camera feed
+              // // Add a CameraPreview widget to display the camera feed
 
-              Positioned(
-                left: 1074,
-                top: 357,
-                child: Column(
-                  children: [
-                    FutureBuilder<void>(
-                      future: _initializeControllerFuture,
-                      builder: (context, snapshot) {
-                        if (snapshot.connectionState == ConnectionState.done) {
-                          return CameraPreview(cameraController); // Use cameraController here
-                        } else {
-                          return CircularProgressIndicator();
-                        }
-                      },
-                    ),
-                    TextButton(
-                      onPressed: _takePicture,
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 177,
-                        height: 150,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          shadows: [
-                            BoxShadow(
-                              color: Color(0xFF3197FD),
-                              blurRadius: 4,
-                              offset: Offset(0, 4),
-                              spreadRadius: 0,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+              // Positioned(
+              //   left: 1074,
+              //   top: 357,
+              //   child: Column(
+              //     children: [
+              //       FutureBuilder<void>(
+              //         future: _initializeControllerFuture,
+              //         builder: (context, snapshot) {
+              //           if (snapshot.connectionState == ConnectionState.done) {
+              //             return CameraPreview(cameraController); // Use cameraController here
+              //           } else {
+              //             return CircularProgressIndicator();
+              //           }
+              //         },
+              //       ),
+              //       TextButton(
+              //         onPressed: _takePicture,
+              //         style: TextButton.styleFrom(
+              //           padding: EdgeInsets.zero,
+              //         ),
+              //         child: Container(
+              //           width: 177,
+              //           height: 150,
+              //           decoration: ShapeDecoration(
+              //             color: Colors.white,
+              //             shape: RoundedRectangleBorder(
+              //               borderRadius: BorderRadius.circular(15),
+              //             ),
+              //             shadows: [
+              //               BoxShadow(
+              //                 color: Color(0xFF3197FD),
+              //                 blurRadius: 4,
+              //                 offset: Offset(0, 4),
+              //                 spreadRadius: 0,
+              //               ),
+              //             ],
+              //           ),
+              //         ),
+              //       ),
+              //     ],
+              //   ),
+              // ),
 
               Positioned(
                 left: 1103,

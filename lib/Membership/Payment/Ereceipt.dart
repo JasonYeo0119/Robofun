@@ -4,28 +4,42 @@ import 'package:amtelbot/Membership/Payment/ReceiptSent.dart';
 import 'package:flutter/material.dart';
 
 class Ereceipt extends StatelessWidget {
+
+  final myController = TextEditingController();
+  final double totalPrice; 
+
+  Ereceipt({required this.totalPrice});
+
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Ereceipt();
+      return Ereceipt(totalPrice: totalPrice);
   }));
   }
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Receiptsent();
+      return Receiptsent(totalPrice: totalPrice);
   }));
   }
 
   void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Paymentsuccessful();
+      return Paymentsuccessful(totalPrice: totalPrice);
   }));
   }
 
+  double calculateTotalPointEarned(double totalPrice) {
+  double totalPointEarned = totalPrice / 100;
+  return double.parse(totalPointEarned.toStringAsFixed(2));
+}
+
   @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
+Widget build(BuildContext context) {
+  double totalPointEarned = calculateTotalPointEarned(totalPrice);
+    return MaterialApp( 
+      home: Scaffold( 
+        body: Column(
+          children: [
         Container(
           width: 1550,
           height: 864,
@@ -61,34 +75,10 @@ class Ereceipt extends StatelessWidget {
                       )
                     ],
                   ),
+
                 ),
               ),
-              Positioned(
-                left: 738,
-                top: 622,
-                child: Text(
-                  '0.25',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 704,
-                top: 523,
-                child: Text(
-                  'RM 24.54',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
+            
               Positioned(
                 left: 675,
                 top: 103,
@@ -120,39 +110,60 @@ class Ereceipt extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 186,
-                top: 715,
-                child: TextButton(
-                   onPressed:  () {navigateNextPage(context);},
-                    style:  TextButton.styleFrom (
-                    padding:  EdgeInsets.zero,
-                    ),
-                child: Container(
-                  width: 780,
-                  height: 88,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                ),
-                ),
-              ),
+  left: 186,
+  top: 715,
+  child: Container(
+    width: 780,
+    height: 88,
+    decoration: ShapeDecoration(
+      color: Colors.white,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(15),
+      ),
+      shadows: [
+        BoxShadow(
+          color: Color(0x3F000000),
+          blurRadius: 4,
+          offset: Offset(0, 4),
+          spreadRadius: 0,
+        )
+      ],
+    ),
+    child: Center( // Center the TextFormField
+      child: TextFormField(
+        style: TextStyle(
+          fontSize: 20,
+          color: Colors.black,
+          fontWeight: FontWeight.bold, // Set the text to be bold
+        ),
+        decoration: InputDecoration(
+          hintText: 'Type your email address here..',
+          border: InputBorder.none,
+          hintStyle: TextStyle( // Set the hint text style here
+            color: Color(0xFF8D7F7F),
+            fontSize: 20,
+            fontFamily: 'Inter',
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+        controller: myController,
+        onChanged: (value) {
+          // Handle text changes here
+        },
+        onFieldSubmitted: (value) {
+          // Handle form submission here
+        },
+      ),
+    ),
+  ),
+),
+
               Positioned(
                 left: 1213,
                 top: 715,
-                child: TextButton(
-                   onPressed:  () {navigateNextPage3(context);},
-                    style:  TextButton.styleFrom (
+                child: ElevatedButton(
+                  onPressed:  () {navigateNextPage3(context);},
+                    style:  ElevatedButton.styleFrom (
                     padding:  EdgeInsets.zero,
                     ),
                 child: Container(
@@ -192,7 +203,7 @@ class Ereceipt extends StatelessWidget {
                 left: 647,
                 top: 481,
                 child: Text(
-                  'Total paid amount',
+                  'Total paid amount: RM ${totalPrice.toStringAsFixed(2)}',
                   style: TextStyle(
                     color: Color(0xFF838383),
                     fontSize: 30,
@@ -205,7 +216,7 @@ class Ereceipt extends StatelessWidget {
                 left: 645,
                 top: 586,
                 child: Text(
-                  'Total Point Earned',
+                  'Total Point Earned: $totalPointEarned',
                   style: TextStyle(
                     color: Color(0xFF838383),
                     fontSize: 30,
@@ -230,19 +241,7 @@ class Ereceipt extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 223,
-                top: 739,
-                child: Text(
-                  'Type your email address here...',
-                  style: TextStyle(
-                    color: Color(0xFF8D7F7F),
-                    fontSize: 32,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
-                  ),
-                ),
-              ),
+              
               Positioned(
                 left: 1230,
                 top: 738,
@@ -260,7 +259,7 @@ class Ereceipt extends StatelessWidget {
                 left: 1017,
                 top: 715,
                 child: TextButton(
-                   onPressed:  () {navigateNextPage2(context);},
+                  onPressed:  () {navigateNextPage2(context);},
                     style:  TextButton.styleFrom (
                     padding:  EdgeInsets.zero,
                     ),
@@ -301,6 +300,8 @@ class Ereceipt extends StatelessWidget {
           ),
         ),
       ],
+  )
+      )
     );
   }
 }

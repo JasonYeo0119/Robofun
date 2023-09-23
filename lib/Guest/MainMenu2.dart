@@ -1,21 +1,20 @@
-import 'package:amtelbot/Membership/Main/Cart.dart';
-import 'package:amtelbot/Membership/Main/EmptyCart.dart';
+import 'package:amtelbot/Guest/Cart2.dart';
+import 'package:amtelbot/Guest/EmptyCart2.dart';
+import 'package:amtelbot/Guest/NoMemberAccount.dart';
 import 'package:flutter/material.dart';
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
-import 'package:amtelbot/Membership/Log In/MemberAccount.dart';
-import 'Product.dart';
-import 'EmptyCart.dart';
+import '../Membership/Main/Product.dart';
 
-class Mainmenu extends StatefulWidget {
+class Mainmenu2 extends StatefulWidget {
   final List<Product> cart;
 
-  Mainmenu({required this.cart});
+  Mainmenu2({required this.cart});
 
   @override
   _MainmenuState createState() => _MainmenuState();
 }
 
-class _MainmenuState extends State<Mainmenu> {
+class _MainmenuState extends State<Mainmenu2> {
   final myController = TextEditingController();
 
   Product? currentProduct;
@@ -44,12 +43,12 @@ void addToCart(Product product) {
   //   if (widget.cart.isEmpty) {
   //     // If the cart is empty, navigate to the empty cart page
   //     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-  //       return Emptycart(cart: cart);
+  //       return Emptycart2(cart: cart,);
   //     }));
   //   } else {
   //     // If there are items in the cart, navigate to the normal cart page
   //     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-  //       return Cart(cart: cart);
+  //       return Cart2(cart: cart);
   //     }));
   //   }
   // }
@@ -68,7 +67,7 @@ void navigateNextPage2(BuildContext ctx) {
 
 void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return MemberAccount();
+      return NoMemberAccount();
 }));
 }
 
@@ -253,11 +252,11 @@ void navigateNextPage3(BuildContext ctx) {
                       onPressed: () {
                       if (cart.isEmpty) {
                         Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Emptycart(cart: cart);
+                          return Emptycart2(cart: cart);
                         }));
                       } else {
                         Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Cart(cart: cart);
+                          return Cart2(cart: cart);
                         }));
                       }
                     },

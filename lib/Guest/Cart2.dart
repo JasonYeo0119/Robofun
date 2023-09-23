@@ -1,19 +1,19 @@
-import 'package:amtelbot/Membership/Main/MainMenu.dart';
-import 'package:amtelbot/Membership/Payment/Payment1.dart';
+import 'MainMenu2.dart';
+import 'Payment1.dart';
 import 'package:flutter/material.dart';
-import 'Product.dart';
+import '../Membership/Main/Product.dart';
 
-class Cart extends StatefulWidget {
+class Cart2 extends StatefulWidget {
 
   final List<Product> cart;
 
-  Cart({required this.cart});
+  Cart2({required this.cart});
   
   @override
   _CartState createState() => _CartState();
 }
 
-class _CartState extends State<Cart> {
+class _CartState extends State<Cart2> {
   List<Product> cart = [];
   int calculateTotalQuantity() {
   int totalQuantity = 0;
@@ -33,7 +33,7 @@ double calculateTotalPrice() {
 
     void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Mainmenu(cart: cart,);
+      return Mainmenu2(cart: cart,);
   }));
   }
 

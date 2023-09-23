@@ -17,13 +17,14 @@ class Payment3 extends StatelessWidget {
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment2();
+      return Payment2(totalPrice: totalPrice,);
   }));
   }
 
   void navigateNextPage3(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Cart(cart: [],);
+      var updatedCart;
+      return Cart(cart: []);
   }));
   }
 

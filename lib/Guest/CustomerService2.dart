@@ -1,13 +1,15 @@
+import 'package:amtelbot/Guest/MainMenu2.dart';
+import 'package:amtelbot/Guest/NoMemberAccount.dart';
+import 'package:amtelbot/Membership/CustomerService/ContactStaff.dart';
+import 'package:amtelbot/Membership/CustomerService/FAQ.dart';
+import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback.dart';
+import 'package:amtelbot/Membership/CustomerService/Shopping%20Map/ShoppingMap.dart';
 import 'package:amtelbot/Membership/Log In/MemberAccount.dart';
 import 'package:amtelbot/Membership/Main/MainMenu.dart';
 import 'package:flutter/material.dart';
-import 'AboutUs.dart';
-import 'ContactStaff.dart';
-import 'FAQ.dart';
-import 'Feedback/GiveFeedback.dart';
-import 'Shopping Map/ShoppingMap.dart';
+import 'package:amtelbot/Membership/CustomerService/AboutUs.dart';
 
-class Customerservice extends StatelessWidget {
+class Customerservice2 extends StatelessWidget {
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Contactstaff();
@@ -40,14 +42,13 @@ void navigateNextPage5(BuildContext ctx) {
 
 void navigateNextPage6(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      var updateCart;
-      return Mainmenu(cart: []);
+      return Mainmenu2(cart: []);
 }));
 }
 
 void navigateNextPage7(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return MemberAccount();
+      return NoMemberAccount();
 }));
 }
 

@@ -1,10 +1,10 @@
-import 'package:amtelbot/Membership/Payment/Payment2.dart';
+import 'Payment2.dart';
 import 'package:flutter/material.dart';
 
-class Paymentqr extends StatelessWidget {
+class Paymentqr2 extends StatelessWidget {
   final double totalPrice; // Pass the total price as a parameter
 
-  Paymentqr({required this.totalPrice});
+  Paymentqr2({required this.totalPrice});
   
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {

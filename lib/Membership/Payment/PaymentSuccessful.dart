@@ -3,9 +3,12 @@ import 'package:amtelbot/homepage/homepage.dart';
 import 'package:flutter/material.dart';
 
 class Paymentsuccessful extends StatelessWidget {
+  final double totalPrice; 
+
+  Paymentsuccessful({required this.totalPrice});
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Ereceipt();
+      return Ereceipt(totalPrice: totalPrice,);
   }));
   }
 
@@ -15,8 +18,14 @@ class Paymentsuccessful extends StatelessWidget {
   }));
   }
 
+  double calculateTotalPointEarned(double totalPrice) {
+  double totalPointEarned = totalPrice / 100;
+  return double.parse(totalPointEarned.toStringAsFixed(2));
+}
+
   @override
   Widget build(BuildContext context) {
+    double totalPointEarned = calculateTotalPointEarned(totalPrice);
     return Column(
       children: [
         Container(
@@ -112,7 +121,7 @@ class Paymentsuccessful extends StatelessWidget {
                 left: 1017,
                 top: 715,
                 child: TextButton(
-                   onPressed:  () {navigateNextPage(context);},
+                  onPressed:  () {navigateNextPage(context);},
                     style:  TextButton.styleFrom (
                     padding:  EdgeInsets.zero,
                     ),
@@ -140,7 +149,7 @@ class Paymentsuccessful extends StatelessWidget {
                 left: 1213,
                 top: 715,
                 child: TextButton(
-                   onPressed:  () {navigateNextPage2(context);},
+                  onPressed:  () {navigateNextPage2(context);},
                     style:  TextButton.styleFrom (
                     padding:  EdgeInsets.zero,
                     ),
@@ -177,37 +186,37 @@ class Paymentsuccessful extends StatelessWidget {
                   ),
                 ),
               ),
-              Positioned(
-                left: 704,
-                top: 523,
-                child: Text(
-                  'RM 24.54',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
-              Positioned(
-                left: 738,
-                top: 622,
-                child: Text(
-                  '0.25',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 30,
-                    fontFamily: 'Inter',
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
-              ),
+              // Positioned(
+              //   left: 704,
+              //   top: 523,
+              //   child: Text(
+              //     'RM 24.54',
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontSize: 30,
+              //       fontFamily: 'Inter',
+              //       fontWeight: FontWeight.w700,
+              //     ),
+              //   ),
+              // ),
+              // Positioned(
+              //   left: 738,
+              //   top: 622,
+              //   child: Text(
+              //     '0.25',
+              //     style: TextStyle(
+              //       color: Colors.black,
+              //       fontSize: 30,
+              //       fontFamily: 'Inter',
+              //       fontWeight: FontWeight.w700,
+              //     ),
+              //   ),
+              // ),
               Positioned(
                 left: 647,
                 top: 481,
                 child: Text(
-                  'Total paid amount',
+                  'Total paid amount: RM ${totalPrice.toStringAsFixed(2)}',
                   style: TextStyle(
                     color: Color(0xFF838383),
                     fontSize: 30,
@@ -216,11 +225,12 @@ class Paymentsuccessful extends StatelessWidget {
                   ),
                 ),
               ),
+              
               Positioned(
                 left: 645,
                 top: 586,
                 child: Text(
-                  'Total Point Earned',
+                  'Total Point Earned: $totalPointEarned',
                   style: TextStyle(
                     color: Color(0xFF838383),
                     fontSize: 30,

@@ -27,7 +27,7 @@ class Paymentpoint extends StatelessWidget {
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Paymentsuccessful();
+      return Paymentsuccessful(totalPrice: totalPrice,);
   }));
   }
 

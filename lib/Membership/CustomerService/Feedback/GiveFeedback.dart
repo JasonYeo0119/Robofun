@@ -1,4 +1,5 @@
 import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
+import 'package:amtelbot/Membership/CustomerService/Feedback/FeedbackThanks.dart';
 import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback1.dart';
 import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback2.dart';
 import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback3.dart';
@@ -6,7 +7,14 @@ import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback4.dart'
 import 'package:amtelbot/Membership/CustomerService/Feedback/GiveFeedback5.dart';
 import 'package:flutter/material.dart';
 
-class Givefeedback extends StatelessWidget {
+class Givefeedback extends StatefulWidget {
+  @override
+  _GivefeedbackState createState() => _GivefeedbackState();
+}
+
+class _GivefeedbackState extends State<Givefeedback> {
+  int starRating = 0; // Variable to store the selected star rating.
+
     void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Customerservice();
@@ -15,38 +23,40 @@ class Givefeedback extends StatelessWidget {
 
   void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Givefeedback1();
+      return Feedbackthanks();
   }));
   }
 
-  void navigateNextPage3(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Givefeedback2();
-  }));
-  }
+  // void navigateNextPage3(BuildContext ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return Givefeedback2();
+  // }));
+  // }
 
-  void navigateNextPage4(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Givefeedback3();
-  }));
-  }
+  // void navigateNextPage4(BuildContext ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return Givefeedback3();
+  // }));
+  // }
 
-  void navigateNextPage5(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Givefeedback4();
-  }));
-  }
+  // void navigateNextPage5(BuildContext ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return Givefeedback4();
+  // }));
+  // }
 
-  void navigateNextPage6(BuildContext ctx) {
-    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Givefeedback5();
-  }));
-  }
+  // void navigateNextPage6(BuildContext ctx) {
+  //   Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+  //     return Givefeedback5();
+  // }));
+  // }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return MaterialApp( 
+      home: Scaffold( 
+        body: Column(
+          children: [
         Container(
           width: 1550,
           height: 864,
@@ -101,6 +111,7 @@ class Givefeedback extends StatelessWidget {
                   ),
                 ),
               ),
+              
               Positioned(
                 left: 177,
                 top: 412,
@@ -115,6 +126,42 @@ class Givefeedback extends StatelessWidget {
                   ),
                 ),
               ),
+
+  SizedBox(height: 16), // Add some space below the text
+      Positioned(
+        left: 177, // Adjust the left position as needed
+        top: 412, // Adjust the top position as needed
+        child: Container(
+          width: 973,
+          height: 277, // Set the height of the input field as needed
+          decoration: ShapeDecoration(
+            color: Colors.white,
+            shape: RoundedRectangleBorder(
+            
+            ),
+            shadows: [
+              BoxShadow(
+                color: Color.fromARGB(255, 164, 164, 164),
+                blurRadius: 4,
+                offset: Offset(0, 4),
+                spreadRadius: 0,
+              )
+            ],
+          ),
+          // You can replace this with your actual text input field
+          child: TextField(
+            decoration: InputDecoration(
+              hintText: 'Enter your feedback here...',
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.circular(15),
+                borderSide: BorderSide.none,
+              ),
+            ),
+            // Handle user input as needed
+          ),
+        ),
+      ),
+
               Positioned(
                 left: 814,
                 top: 737,
@@ -143,14 +190,20 @@ class Givefeedback extends StatelessWidget {
                 ),
                 ),
               ),
+              // Submit button
               Positioned(
                 left: 467,
                 top: 737,
+                child: TextButton(
+                      onPressed: starRating > 0 ? () => navigateNextPage2(context) : null, // Disable the button if starRating is not greater than 1
+                      style: TextButton.styleFrom(
+                        padding: EdgeInsets.zero,
+                      ),
                 child: Container(
                   width: 269,
                   height: 88,
                   decoration: ShapeDecoration(
-                    color: Color(0xFFB2B2AA),
+                    color: Color.fromARGB(255, 255, 255, 255),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -163,6 +216,7 @@ class Givefeedback extends StatelessWidget {
                       )
                     ],
                   ),
+                ),
                 ),
               ),
               Positioned(
@@ -191,132 +245,44 @@ class Givefeedback extends StatelessWidget {
                   ),
                 ),
               ),
+              // Star Rating Section
+                Positioned(
+              left: 177,
+              top: 193,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                  for (int i = 1; i <= 5; i++)
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 43.0), // Adjust the horizontal spacing between stars
+                      child: IconButton(
+                        icon: Icon(
+                          i <= starRating
+                              ? Icons.star
+                              : Icons.star_border,
+                          size: 120, // Adjust the size of the star icons
+                          color: Colors.amber,
+                        ),
+                        onPressed: () {
+                          setState(() {
+                            starRating = i;
+                          });
+                        },
+                      ),
+                    ),
+                ],
+              ),
+            ),
+
+
+            //  
               
-              // star 1
-              Positioned(
-                left: 177,
-                top: 193,
-                child: TextButton(
-                      onPressed:  () {navigateNextPage2(context);},
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ),
-              ),
-
-                // star 2
-            Positioned(
-                left: 297,
-                top: 193,
-                child: TextButton(
-                      onPressed:  () {navigateNextPage2(context);},
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ),
-              ),
-
-              // star 3
-              Positioned(
-                left: 417,
-                top: 193,
-                child: TextButton(
-                      onPressed:  () {navigateNextPage4(context);},
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ),
-              ),
-
-              // star 4
-              Positioned(
-                left: 537,
-                top: 193,
-                child: TextButton(
-                      onPressed:  () {navigateNextPage5(context);},
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ),
-              ),
-
-              // star 5
-              Positioned(
-                left: 657,
-                top: 193,
-                child: TextButton(
-                      onPressed:  () {navigateNextPage6(context);},
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ),
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-                ),
-              ),
-              Positioned(
-                left: 297,
-                top: 193,
-                child: Container(
-                  width: 120,
-                  height: 120,
-                  clipBehavior: Clip.antiAlias,
-                  decoration: BoxDecoration(),
-                  child: Stack(children: [
-                  ]),
-                ),
-              ),
             ],
           ),
         ),
       ],
+    )
+      )
     );
   }
 }
