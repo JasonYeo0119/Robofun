@@ -440,8 +440,8 @@ class _VerificationPageState extends State<VerificationPage> {
               // // Add a CameraPreview widget to display the camera feed
 
               Positioned(
-                left: 1074,
-                top: 357,
+                left: 965,
+                top: 266,
                 child: Stack(
                   children: [
                     FutureBuilder<void>(
@@ -449,8 +449,8 @@ class _VerificationPageState extends State<VerificationPage> {
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
                           return Container(
-                            width: 177,
-                            height: 150,
+                            width: 400,
+                            height: 400,
                             child: CameraPreview(cameraController), // Use cameraController here
                           );
                         } else {
