@@ -442,45 +442,26 @@ class _VerificationPageState extends State<VerificationPage> {
               Positioned(
                 left: 1074,
                 top: 357,
-                child: Column(
+                child: Stack(
                   children: [
                     FutureBuilder<void>(
                       future: _initializeControllerFuture,
                       builder: (context, snapshot) {
                         if (snapshot.connectionState == ConnectionState.done) {
-                          return CameraPreview(cameraController); // Use cameraController here
+                          return Container(
+                            width: 177,
+                            height: 150,
+                            child: CameraPreview(cameraController), // Use cameraController here
+                          );
                         } else {
                           return CircularProgressIndicator();
                         }
                       },
                     ),
-                    TextButton(
-                      onPressed: _takePicture,
-                      style: TextButton.styleFrom(
-                        padding: EdgeInsets.zero,
-                      ),
-                      child: Container(
-                        width: 177,
-                        height: 150,
-                        decoration: ShapeDecoration(
-                          color: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(15),
-                          ),
-                          shadows: [
-                            BoxShadow(
-                              color: Color(0xFF3197FD),
-                              blurRadius: 4,
-                              offset: Offset(0, 4),
-                              spreadRadius: 0,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
                   ],
                 ),
               ),
+
 
               Positioned(
                 left: 1103,
