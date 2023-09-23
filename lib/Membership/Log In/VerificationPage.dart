@@ -428,7 +428,7 @@ class _VerificationPageState extends State<VerificationPage> {
                 left: 1104,
                 top: 746,
                 child: Text(
-                  'Cancel',
+                  '  Done',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 36,
