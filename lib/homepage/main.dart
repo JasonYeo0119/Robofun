@@ -1,3 +1,5 @@
+import 'package:amtelbot/Membership/Log%20In/VerificationPage.dart';
+
 import 'homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -18,7 +20,7 @@ class FigmaToCodeApp extends StatelessWidget {
       home: Scaffold(
         body: ListView(
           children: [
-          HomePage(),
+          VerificationPage(),
         ]),
       ),
     );
