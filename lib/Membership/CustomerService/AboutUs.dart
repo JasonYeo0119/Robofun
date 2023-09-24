@@ -40,28 +40,7 @@ void navigateNextPage(BuildContext ctx) {
                   ),
                 ),
               ),
-              Positioned(
-                left: 116,
-                top: 175,
-                child: Container(
-                  width: 345,
-                  height: 345,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/345x345"),
-                      fit: BoxFit.fill,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                ),
-              ),
+              
               Positioned(
                 left: 116,
                 top: 126,
@@ -373,7 +352,16 @@ void navigateNextPage(BuildContext ctx) {
                   ),
                 ),
               ),
-            ],
+              Positioned(
+              left: 116,
+              top: 175,
+              child: Image.asset(
+                'lib/Membership/CustomerService/smile supermarket logo.png',
+                width: 345,
+                height: 345,
+              ),
+              ),
+                ],
           ),
         ),
       ],

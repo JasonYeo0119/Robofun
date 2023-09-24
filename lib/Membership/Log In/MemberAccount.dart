@@ -385,26 +385,17 @@ void navigateNextPage2(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 688,
-                top: 34,
-                child: Container(
-                  width: 117,
-                  height: 135,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/117x135"),
-                      fit: BoxFit.cover,
-                    ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                ),
+              left: 688,
+              top: 34,
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'lib/Membership/CustomerService/yeokiatming.JPG',
+                width: 117,
+                height: 135,
+                fit: BoxFit.cover,
+              ),
+              ),
               ),
               Positioned(
                 left: 450,
@@ -847,6 +838,15 @@ void navigateNextPage2(BuildContext ctx) {
                     shape: OvalBorder(),
                   ),
                 ),
+              ),
+              Positioned(
+              left: 402,
+              top: 34,
+              child: Image.asset(
+                'lib/Membership/CustomerService/smile supermarket logo.png',
+                width: 78,
+                height: 80,
+              ),
               ),
               Positioned(
                 left: 24,

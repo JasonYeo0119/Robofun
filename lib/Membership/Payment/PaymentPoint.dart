@@ -286,29 +286,16 @@ class Paymentpoint extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 241,
-                top: 295,
-                child: Container(
-                  width: 313,
-                  height: 361,
-                  decoration: ShapeDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/313x361"),
-                      fit: BoxFit.cover,
-                    ),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(25),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
-                  ),
-                ),
+              left: 241,
+              top: 295,
+              child: ClipRRect(borderRadius: BorderRadius.circular(10),
+              child: Image.asset(
+                'lib/Membership/CustomerService/yeokiatming.JPG',
+                width: 313,
+                height: 361,
+                fit: BoxFit.cover,
+              ),
+              ),
               ),
             ],
           ),
