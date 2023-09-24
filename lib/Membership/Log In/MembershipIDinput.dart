@@ -22,7 +22,7 @@ class Membershipidinput extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -40,7 +40,7 @@ class Membershipidinput extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image:
-                          NetworkImage("https://via.placeholder.com/775x864"),
+                          NetworkImage("https://kimola.com/images/mh/posts/e527e3e3-3866-40e1-b66e-203e49c2c755.jpg"),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -74,18 +74,13 @@ class Membershipidinput extends StatelessWidget {
                 child: Container(
                   width: 64,
                   height: 64,
-                  clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
+                    image: DecorationImage(
+                      image:
+                          NetworkImage("https://static.thenounproject.com/png/261420-200.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
-                  child: Stack(children: []),
                 ),
               ),
               Positioned(
@@ -154,7 +149,7 @@ class Membershipidinput extends StatelessWidget {
                   child: Text(
                     'Welcome to Happy Supermarket',
                     style: TextStyle(
-                      color: Colors.white,
+                      color: Color.fromARGB(255, 255, 255, 255),
                       fontSize: 75,
                       fontFamily: 'Open Sans',
                       fontWeight: FontWeight.w700,
@@ -240,8 +235,7 @@ class Membershipidinput extends StatelessWidget {
                   ),
                 ),
               ),
-              
-              
+               
               Positioned(
                 left: 1000,
                 top: 243,
@@ -251,7 +245,7 @@ class Membershipidinput extends StatelessWidget {
                   decoration: BoxDecoration(
                     image: DecorationImage(
                       image:
-                          NetworkImage("https://via.placeholder.com/387x229"),
+                          NetworkImage("https://upload.wikimedia.org/wikipedia/en/thumb/8/83/Universal_Contactless_Card_Symbol.svg/1200px-Universal_Contactless_Card_Symbol.svg.png"),
                       fit: BoxFit.fill,
                     ),
                   ),

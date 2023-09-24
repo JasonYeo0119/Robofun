@@ -350,6 +350,20 @@ class Payment2 extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                left: 629,
+                top: 200,
+                child: Container(
+                  width: 289,
+                  height: 283,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://icones.pro/wp-content/uploads/2021/03/icone-de-portefeuille-d-argent-violet.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),

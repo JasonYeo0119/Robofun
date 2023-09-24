@@ -46,7 +46,7 @@ Widget build(BuildContext context) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -80,14 +80,14 @@ Widget build(BuildContext context) {
               ),
             
               Positioned(
-                left: 675,
-                top: 103,
+                left: 590,
+                top: 25,
                 child: Container(
-                  width: 200,
-                  height: 200,
+                  width: 350,
+                  height: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/200x200"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -102,7 +102,7 @@ Widget build(BuildContext context) {
                     'Payment Successful !',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 48,
+                      fontSize: 46,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
                     ),
@@ -110,54 +110,54 @@ Widget build(BuildContext context) {
                 ),
               ),
               Positioned(
-  left: 186,
-  top: 715,
-  child: Container(
-    width: 780,
-    height: 88,
-    decoration: ShapeDecoration(
-      color: Colors.white,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(15),
-      ),
-      shadows: [
-        BoxShadow(
-          color: Color(0x3F000000),
-          blurRadius: 4,
-          offset: Offset(0, 4),
-          spreadRadius: 0,
-        )
-      ],
-    ),
-    child: Center( // Center the TextFormField
-      child: TextFormField(
-        style: TextStyle(
-          fontSize: 20,
-          color: Colors.black,
-          fontWeight: FontWeight.bold, // Set the text to be bold
-        ),
-        decoration: InputDecoration(
-          hintText: 'Type your email address here..',
-          border: InputBorder.none,
-          hintStyle: TextStyle( // Set the hint text style here
-            color: Color(0xFF8D7F7F),
-            fontSize: 20,
-            fontFamily: 'Inter',
-            fontWeight: FontWeight.w400,
-          ),
-        ),
-        controller: myController,
-        onChanged: (value) {
-          // Handle text changes here
-        },
-        onFieldSubmitted: (value) {
-          // Handle form submission here
-        },
-      ),
-    ),
-  ),
-),
-
+                left: 186,
+                top: 715,
+                child: Container(
+                  width: 780,
+                  height: 88,
+                  decoration: ShapeDecoration(
+                    color: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    shadows: [
+                      BoxShadow(
+                        color: Color(0x3F000000),
+                        blurRadius: 4,
+                        offset: Offset(0, 4),
+                        spreadRadius: 0,
+                      ),
+                    ],
+                  ),
+                  child: Center(
+                    child: TextFormField(
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: Colors.black,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      decoration: InputDecoration(
+                        hintText: 'Type your email address here..',
+                        border: InputBorder.none,
+                        hintStyle: TextStyle(
+                          color: Color(0xFF8D7F7F),
+                          fontSize: 24,
+                          fontFamily: 'Inter',
+                          fontWeight: FontWeight.w400,
+                        ),
+                        contentPadding: EdgeInsets.symmetric(vertical: 16, horizontal: 20), // Adjust padding here
+                      ),
+                      controller: myController,
+                      onChanged: (value) {
+                        // Handle text changes here
+                      },
+                      onFieldSubmitted: (value) {
+                        // Handle form submission here
+                      },
+                    ),
+                  ),
+                ),
+              ),
               Positioned(
                 left: 1213,
                 top: 715,

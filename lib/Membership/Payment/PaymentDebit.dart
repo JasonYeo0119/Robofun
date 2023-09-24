@@ -1,5 +1,6 @@
 import 'package:amtelbot/Membership/Payment/Payment1.dart';
 import 'package:amtelbot/Membership/Main/Cart.dart';
+import 'package:amtelbot/Membership/Payment/PaymentSuccessful.dart';
 import 'package:flutter/material.dart';
 
 class Paymentdebit extends StatelessWidget {
@@ -13,6 +14,12 @@ class Paymentdebit extends StatelessWidget {
   }));
   }
 
+  void navigateNextPage2(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Paymentsuccessful(totalPrice: totalPrice,);
+    }));
+  }
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -23,7 +30,7 @@ class Paymentdebit extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -55,10 +62,42 @@ class Paymentdebit extends StatelessWidget {
                 ),
               ),
 
+
+              // Done button
+              Positioned(
+                left: 803,
+                top: 736,
+                child:
+                TextButton(
+                  onPressed:  () {navigateNextPage2(context);},
+                  style:  TextButton.styleFrom (
+                    padding:  EdgeInsets.zero,
+                  ),
+                  child: Container(
+                    width: 251,
+                    height: 88,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadows: [
+                        BoxShadow(
+                          color: Color(0xFF3197FD),
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
               // Back button
               Positioned(
-                left: 649, 
-                top: 723,  
+                left: 497,
+                top: 736,
                 child:
               TextButton(
               onPressed:  () {navigateNextPage(context);},
@@ -87,10 +126,23 @@ class Paymentdebit extends StatelessWidget {
             ),
 
               Positioned(
-                left: 733,
-                top: 745,
+                left: 581,
+                top: 758,
                 child: Text(
                   'Back',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 36,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 861,
+                top: 758,
+                child: Text(
+                  'Done',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 36,
@@ -113,53 +165,95 @@ class Paymentdebit extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 832,
+                left: 177,
                 top: 460,
                 child: Container(
-                  width: 230,
+                  width: 240,
                   height: 166,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/230x166"),
+                      image: NetworkImage("https://cdn.icon-icons.com/icons2/1178/PNG/512/mastercard_82049.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 506,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://cdn.icon-icons.com/icons2/1259/PNG/512/1495815261-jd08_84586.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 832,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://1000logos.net/wp-content/uploads/2021/04/UnionPay-logo.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 1177,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
               ),
 
-  Positioned(
-  left: 671,
-  top: 286,
-  child: Row(
-    children: [
-      Text(
-        'RM',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 40,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
-          letterSpacing: 7.40,
-        ),
-      ),
-      Text(
-        totalPrice.toStringAsFixed(2), // Display the totalPrice value here
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 40,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
-          letterSpacing: 7.40,
-        ),
-      ),
-    ],
-  ),
-),
+              Positioned(
+              left: 671,
+              top: 286,
+              child: Row(
+                children: [
+                  Text(
+                    'RM',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 7.40,
+                    ),
+                  ),
+                  Text(
+                    totalPrice.toStringAsFixed(2), // Display the totalPrice value here
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 7.40,
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              }
+            }

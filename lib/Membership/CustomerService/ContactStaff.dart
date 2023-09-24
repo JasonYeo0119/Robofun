@@ -42,7 +42,7 @@ void _launchPhoneCall() async {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -64,30 +64,7 @@ void _launchPhoneCall() async {
                   ),
                 ),
               ),
-              // Positioned(
-              //   left: 1198,
-              //   top: 494,
-              //   child: Container(
-              //     width: 304,
-              //     height: 88,
-              //     decoration: ShapeDecoration(
-              //       color: Color(0xFFEC2222),
-              //       shape: RoundedRectangleBorder(
-              //         borderRadius: BorderRadius.circular(15),
-              //       ),
-              //       shadows: [
-              //         BoxShadow(
-              //           color: Color(0x3F000000),
-              //           blurRadius: 4,
-              //           offset: Offset(0, 4),
-              //           spreadRadius: 0,
-              //         )
-              //       ],
-              //   ),
-              //   ),
-              // ),
-
-             // Button to initiate the call
+        
             Positioned(
               left: 1198,
               top: 494,
@@ -929,27 +906,19 @@ void _launchPhoneCall() async {
                 ),
               ),
               Positioned(
-                left: 593,
+                left: 220,
                 top: 498,
                 child: Container(
                   width: 85,
                   height: 84,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/85x84"),
+                      image: NetworkImage("https://icones.pro/wp-content/uploads/2021/02/icone-de-localisation-rouge.png"),
                       fit: BoxFit.contain,
                     ),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
                       )
-                    ],
                   ),
                 ),
-              ),
             ],
           ),
         ),

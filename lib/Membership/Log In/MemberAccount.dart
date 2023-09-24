@@ -27,7 +27,7 @@ void navigateNextPage2(BuildContext ctx) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -51,8 +51,8 @@ void navigateNextPage2(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 24,
-                top: 172,
+                left: 9,
+                top: 155,
                 child:
               TextButton(
               onPressed:  () {navigateNextPage(context);},
@@ -60,11 +60,11 @@ void navigateNextPage2(BuildContext ctx) {
               padding:  EdgeInsets.zero,
               ),
                 child: Container(
-                  width: 90,
-                  height: 90,
+                  width: 120,
+                  height: 120,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/014/391/893/small/home-icon-isolated-on-transparent-background-black-symbol-for-your-design-free-png.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -79,7 +79,7 @@ void navigateNextPage2(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.thenounproject.com/png/2821166-200.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -99,7 +99,7 @@ void navigateNextPage2(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.thenounproject.com/png/2821166-200.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -440,13 +440,13 @@ void navigateNextPage2(BuildContext ctx) {
               ),
               Positioned(
                 left: 398,
-                top: 191,
+                top: 195,
                 child: Container(
-                  width: 47,
-                  height: 47,
+                  width: 40,
+                  height: 40,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/47x47"),
+                      image: NetworkImage("https://p7.hiclipart.com/preview/527/139/809/data-matrix-barcode-2d-code-matrix-code.jpg"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -851,16 +851,11 @@ void navigateNextPage2(BuildContext ctx) {
               Positioned(
                 left: 24,
                 top: 729,
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
+                child: Icon(
+                  Icons.account_circle_outlined,
+                  size: 90,
+                  color: Colors.black,
                     ),
-                  ),
-                ),
               ),
             ],
           ),

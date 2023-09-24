@@ -40,26 +40,6 @@ void addToCart(Product product) {
     });
   }
 
-  // void navigateNextPage6(BuildContext context) {
-  //   if (widget.cart.isEmpty) {
-  //     // If the cart is empty, navigate to the empty cart page
-  //     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-  //       return Emptycart(cart: cart);
-  //     }));
-  //   } else {
-  //     // If there are items in the cart, navigate to the normal cart page
-  //     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-  //       return Cart(cart: cart);
-  //     }));
-  //   }
-  // }
-
-//   void navigateNextPage(BuildContext ctx) {
-//     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-//       return Cart(cart: cart);
-// }));
-// }
-
 void navigateNextPage2(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Customerservice();
@@ -71,12 +51,6 @@ void navigateNextPage3(BuildContext ctx) {
       return MemberAccount();
 }));
 }
-
-// void navigateNextPage4(BuildContext ctx) {
-//     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-//       return Emptycart();
-// }));
-// }
 
 @override
   void dispose() {
@@ -97,7 +71,7 @@ void navigateNextPage3(BuildContext ctx) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -147,7 +121,7 @@ void navigateNextPage3(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.thenounproject.com/png/2821166-200.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -162,77 +136,29 @@ void navigateNextPage3(BuildContext ctx) {
                 style:  TextButton.styleFrom (
                 padding:  EdgeInsets.zero,
                 ),
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
+                child: Icon(
+                  Icons.account_circle_outlined,
+                  size: 90,
+                  color: Colors.black,
                     ),
                   ),
                 ),
-                ),
-              ),
-              Positioned(
-                left: 24,
-                top: 172,
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-              ),
-            
-            // Remove
-            // Positioned(
-            //     left: 1178,
-            //     top: 43,
-            //     child:
-            //   TextButton(
-            //   onPressed:  () {navigateNextPage5(context);},
-            //   style:  TextButton.styleFrom (
-            //   padding:  EdgeInsets.zero,
-            //   ),
-            //     child: Container(
-            //       width: 182,
-            //       height: 72,
-            //       decoration: ShapeDecoration(
-            //         color: Colors.white,
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(15),
-            //         ),
-            //         shadows: [
-            //           BoxShadow(
-            //             color: Color(0xFF3197FD),
-            //             blurRadius: 4,
-            //             offset: Offset(0, 4),
-            //             spreadRadius: 0,
-            //           )
-            //         ],
-            //     ), 
-            //     ),
-            //   ),
-            // ),
 
-              // Positioned(
-              //   left: 1208,
-              //   top: 60,
-              //   child: Text(
-              //     'Remove',
-              //     style: TextStyle(
-              //       color: Colors.black,
-              //       fontSize: 32,
-              //       fontFamily: 'Inter',
-              //       fontWeight: FontWeight.w400,
-              //     ),
-              //   ),
-              // ),
+              Positioned(
+                left: 9,
+                top: 155,
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/014/391/893/small/home-icon-isolated-on-transparent-background-black-symbol-for-your-design-free-png.png"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              
               Positioned(
                 left: 190,
                 top: 35,
@@ -247,33 +173,60 @@ void navigateNextPage3(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 1409,
-                top: 29,
-                child: TextButton(
-                      onPressed: () {
-                      if (cart.isEmpty) {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Emptycart(cart: cart);
-                        }));
-                      } else {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Cart(cart: cart);
-                        }));
-                      }
-                    },
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ), 
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: ShapeDecoration(
-                    color: Color(0x99292FBC),
-                    shape: OvalBorder(),
-                  ),
-                ),
-                ),
-              ),
+                        left: 1409,
+                        top: 29,
+                        child: TextButton(
+                          onPressed: () {
+                            if (cart.isEmpty) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                return Emptycart(cart: cart);
+                              }));
+                            } else {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                return Cart(cart: cart);
+                              }));
+                            }
+                          },
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Stack(
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 100,
+                                decoration: ShapeDecoration(
+                                  color: Color(0x99292FBC),
+                                  shape: CircleBorder(),
+                                ),
+                              ),
+                              if (cart.isNotEmpty) // Only show the notification if the cart is not empty
+                                Positioned(
+                                  right: 0, // Adjust the right position to align with the right edge
+                                  top: 0,   // Adjust the top position to align with the top edge
+                                  child: Container(
+                                    width: 36,
+                                    height: 36,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.red, // Red color for notification
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${cart.length}',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+        ),
               
               // rectangle for qr
               Positioned(
@@ -307,6 +260,7 @@ void navigateNextPage3(BuildContext ctx) {
                       border: InputBorder.none,
                     ),
                     controller: myController,
+                    autofocus: true,
                     onChanged: (value) {
                       // Handle text changes here
                     },
@@ -431,7 +385,20 @@ void navigateNextPage3(BuildContext ctx) {
                       )
                     : SizedBox(), // Hide if there is no current product
               ),
-              
+              Positioned(
+                left: 1431,
+                top: 53,
+                child: Container(
+                  width: 55,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ), 
             ],
         ),
       ),

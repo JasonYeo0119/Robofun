@@ -34,7 +34,7 @@ class Paymentsuccessful extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -66,14 +66,14 @@ class Paymentsuccessful extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 675,
-                top: 103,
+                left: 590,
+                top: 25,
                 child: Container(
-                  width: 200,
-                  height: 200,
+                  width: 350,
+                  height: 350,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/200x200"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -88,7 +88,7 @@ class Paymentsuccessful extends StatelessWidget {
                     'Payment Successful !',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 48,
+                      fontSize: 46,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
                     ),

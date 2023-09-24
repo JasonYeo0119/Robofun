@@ -1,21 +1,46 @@
 import 'package:amtelbot/Membership/Payment/Payment2.dart';
+import 'package:amtelbot/Membership/Payment/PaymentSuccessful.dart';
 import 'package:flutter/material.dart';
 
-class Paymentqr extends StatelessWidget {
-  final double totalPrice; // Pass the total price as a parameter
+class Paymentqr extends StatefulWidget {
 
-  Paymentqr({required this.totalPrice});
-  
+final double totalPrice; // Pass the total price as a parameter
+
+Paymentqr({required this.totalPrice});
+
+@override
+_PaymentqrState createState() => _PaymentqrState();
+}
+
+class _PaymentqrState extends State<Paymentqr> {
+  final myController = TextEditingController();
+  String scannedBarcode = '';
+
   void navigateNextPage(BuildContext ctx) {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
-      return Payment2(totalPrice: totalPrice,);
+      return Payment2(totalPrice: widget.totalPrice);
     }));
   }
-  
+
+  void navigateNextPage2(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Paymentsuccessful(totalPrice: widget.totalPrice);
+    }));
+  }
+
+  // Function to handle the scanned barcode input
+  void displayScannedBarcode(String barcode) {
+    setState(() {
+      scannedBarcode = barcode;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
+    return MaterialApp(
+        home: Scaffold(
+            body: Column(
+              children: [
         Container(
           width: 1550,
           height: 864,
@@ -54,9 +79,41 @@ class Paymentqr extends StatelessWidget {
                   ),
                 ),
               ),
+              // Done button
               Positioned(
-                left: 649, 
-                top: 723,  
+                left: 803,
+                top: 736,
+                child:
+                TextButton(
+                  onPressed:  () {navigateNextPage2(context);},
+                  style:  TextButton.styleFrom (
+                    padding:  EdgeInsets.zero,
+                  ),
+                  child: Container(
+                    width: 251,
+                    height: 88,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadows: [
+                        BoxShadow(
+                          color: Color(0xFF3197FD),
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
+              // Back button
+              Positioned(
+                left: 497,
+                top: 736,
                 child:
               TextButton(
               onPressed:  () {navigateNextPage(context);},
@@ -115,7 +172,7 @@ class Paymentqr extends StatelessWidget {
                 left: 55,
                 top: 47,
                 child: Text(
-                  'Please show your Payment code to the scanner:',
+                  'Please show the Payment Code to the camera:',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 48,
@@ -125,9 +182,23 @@ class Paymentqr extends StatelessWidget {
                   ),
                 ),
               ),
+              // Text widget to display the scanned barcode
               Positioned(
-                left: 733,
-                top: 756,
+                left: 55,
+                top: 100, // Adjust the top position as needed
+                child: Text(
+                  'Scanned Barcode: $scannedBarcode',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 24,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 581,
+                top: 758,
                 child: Text(
                   'Back',
                   style: TextStyle(
@@ -139,42 +210,53 @@ class Paymentqr extends StatelessWidget {
                   ),
                 ),
               ),
+
               Positioned(
-                left: 686,
-                top: 357,
-                child: Container(
-                  width: 177,
-                  height: 150,
-                  decoration: ShapeDecoration(
-                    color: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0xFF3197FD),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
+                left: 861,
+                top: 758,
+                child: Text(
+                  'Done',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 36,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ),
+              // Changes
               Positioned(
-                left: 715,
-                top: 372,
+                left: 553,
+                top: 400,
                 child: Container(
-                  width: 120,
-                  height: 120,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/120x120"),
-                      fit: BoxFit.contain,
+                  width: 450,
+                  height: 90,
+                  child: TextFormField(
+                    style: TextStyle(
+                      fontSize: 24,
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
                     ),
-                  ),
+                    decoration: InputDecoration(
+                      // Add this line to hide the border and make the field transparent
+                      border: InputBorder.none, // Hide the border
+                      hintText: '',
+                      fillColor: Colors.transparent, // Make the background transparent
+                      filled: true, // Ensure the background is filled
+                    ),
+                    controller: myController,
+                    autofocus: true,
+                    onFieldSubmitted: (value) {
+                      // Call the function with the scanned barcode
+                      displayScannedBarcode(value);
+
+                      // Clear the text field after adding the product
+                      myController.clear();
+                    },
+                  )
                 ),
               ),
+
               Positioned(
                 left: 551,
                 top: 209,
@@ -365,6 +447,13 @@ class Paymentqr extends StatelessWidget {
           ),
         ),
       ],
+    )
+    )
     );
+  }
+  @override
+  void dispose() {
+    myController.dispose(); // Dispose of the TextEditingController
+    super.dispose();
   }
 }

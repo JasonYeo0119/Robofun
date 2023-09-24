@@ -1,6 +1,7 @@
 import 'package:amtelbot/Membership/Main/MainMenu.dart';
 import 'package:amtelbot/Membership/Payment/Payment1.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
 import 'Product.dart';
 
 class Cart extends StatefulWidget {
@@ -93,14 +94,6 @@ double calculateTotalPrice() {
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    shadows: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
                   ),
                 ),
               ),
@@ -140,23 +133,30 @@ double calculateTotalPrice() {
                   ),
                 ),
                     IconButton(
-                      icon: Icon(Icons.remove),
                       onPressed: () {
-                        // Remove the product from the cart
                         widget.cart.remove(product);
-                        // Call the updateCart method to trigger a rebuild
                         updateCart();
                       },
+                      icon: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(8.0),
+                          color: Colors.red,
+                          shape: BoxShape.rectangle,
+                        ),
+                        padding: EdgeInsets.all(2.0),
+                        child: Image.network(
+                          'https://cdn-icons-png.flaticon.com/512/4021/4021663.png',
+                      width: 30,
+                      height: 30,
+                      ),
+                      ),
+                      iconSize: 30,
                     ),
                   ],
                 ),
             ],
           ),
-        ),
-
-          
-
-              // Back
+        ),    
               Positioned(
                 left: 915,
                 top: 763,
@@ -232,7 +232,20 @@ double calculateTotalPrice() {
                   ),
                 ),
               ),
-              
+              Positioned(
+                left: 360,
+                top: 27,
+                child: Container(
+                  width: 40,
+                  height: 40,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
               
               Positioned(
                 left: 999,
@@ -278,19 +291,19 @@ double calculateTotalPrice() {
               ),
             ),
               Positioned(
-  left: 483,
-  top: 777,
-  child: Text(
-    'Total: RM ${calculateTotalPrice().toStringAsFixed(2)}',
-    style: TextStyle(
-      color: Colors.black,
-      fontSize: 40,
-      fontFamily: 'Inter',
-      fontWeight: FontWeight.w400,
-      letterSpacing: 4,
-    ),
-  ),
-),
+                left: 483,
+                top: 777,
+                child: Text(
+                'Total: RM ${calculateTotalPrice().toStringAsFixed(2)}',
+                  style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 40,
+                  fontFamily: 'Inter',
+                  fontWeight: FontWeight.w400,
+                  letterSpacing: 4,
+                ),
+              ),
+            ),
               Positioned(
                 left: 374,
                 top: 24,
@@ -299,14 +312,6 @@ double calculateTotalPrice() {
                   height: 46,
                   clipBehavior: Clip.antiAlias,
                   decoration: BoxDecoration(
-                    boxShadow: [
-                      BoxShadow(
-                        color: Color(0x3F000000),
-                        blurRadius: 4,
-                        offset: Offset(0, 4),
-                        spreadRadius: 0,
-                      )
-                    ],
                   ),
                   child: Stack(children: [
                   ]),

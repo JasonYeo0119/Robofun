@@ -1,5 +1,8 @@
-import 'package:amtelbot/Membership/Log%20In/VerificationPage.dart';
-
+import 'package:amtelbot/Guest/Payment1.dart';
+import 'package:amtelbot/Membership/CustomerService/CustomerService.dart';
+import 'package:amtelbot/Membership/Log%20In/MemberAccount.dart';
+import 'package:amtelbot/Membership/Main/Cart.dart';
+import 'package:amtelbot/Membership/Main/EmptyCart.dart';
 import 'homepage.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +22,7 @@ class FigmaToCodeApp extends StatelessWidget {
       home: Scaffold(
         body: ListView(
           children: [
-          VerificationPage(),
+          MemberAccount(),
         ]),
       ),
     );

@@ -18,7 +18,7 @@ class Verificationsuccessful extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -35,7 +35,7 @@ class Verificationsuccessful extends StatelessWidget {
                   height: 864,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/775x864"),
+                      image: NetworkImage("https://kimola.com/images/mh/posts/e527e3e3-3866-40e1-b66e-203e49c2c755.jpg"),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -116,14 +116,14 @@ class Verificationsuccessful extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 1061,
-                top: 157,
+                left: 968,
+                top: 62,
                 child: Container(
-                  width: 200,
-                  height: 200,
+                  width: 400,
+                  height: 400,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/200x200"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/011/858/556/small/green-check-mark-icon-with-circle-tick-box-check-list-circle-frame-checkbox-symbol-sign-png.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -138,7 +138,7 @@ class Verificationsuccessful extends StatelessWidget {
                     'Verification Successful !',
                     style: TextStyle(
                       color: Colors.black,
-                      fontSize: 48,
+                      fontSize: 46,
                       fontFamily: 'Lato',
                       fontWeight: FontWeight.w700,
                     ),

@@ -246,33 +246,60 @@ void navigateNextPage3(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 1409,
-                top: 29,
-                child: TextButton(
-                      onPressed: () {
-                      if (cart.isEmpty) {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Emptycart2(cart: cart);
-                        }));
-                      } else {
-                        Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-                          return Cart2(cart: cart);
-                        }));
-                      }
-                    },
-                      style:  TextButton.styleFrom (
-                      padding:  EdgeInsets.zero,
-                      ), 
-                child: Container(
-                  width: 100,
-                  height: 100,
-                  decoration: ShapeDecoration(
-                    color: Color(0x99292FBC),
-                    shape: OvalBorder(),
-                  ),
-                ),
-                ),
-              ),
+                        left: 1409,
+                        top: 29,
+                        child: TextButton(
+                          onPressed: () {
+                            if (cart.isEmpty) {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                return Emptycart2(cart: cart);
+                              }));
+                            } else {
+                              Navigator.of(context).push(MaterialPageRoute(builder: (_) {
+                                return Cart2(cart: cart);
+                              }));
+                            }
+                          },
+                          style: TextButton.styleFrom(
+                            padding: EdgeInsets.zero,
+                          ),
+                          child: Stack(
+                            children: [
+                              Container(
+                                width: 100,
+                                height: 100,
+                                decoration: ShapeDecoration(
+                                  color: Color(0x99292FBC),
+                                  shape: CircleBorder(),
+                                ),
+                              ),
+                              if (cart.isNotEmpty) // Only show the notification if the cart is not empty
+                                Positioned(
+                                  right: 0, // Adjust the right position to align with the right edge
+                                  top: 0,   // Adjust the top position to align with the top edge
+                                  child: Container(
+                                    width: 36,
+                                    height: 36,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Colors.red, // Red color for notification
+                                    ),
+                                    child: Center(
+                                      child: Text(
+                                        '${cart.length}',
+                                        style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 20,
+                                          fontWeight: FontWeight.bold,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                            ],
+                          ),
+                        ),
+        ),
               
               // rectangle for qr
               Positioned(
@@ -306,6 +333,7 @@ void navigateNextPage3(BuildContext ctx) {
                       border: InputBorder.none,
                     ),
                     controller: myController,
+                    autofocus: true,
                     onChanged: (value) {
                       // Handle text changes here
                     },

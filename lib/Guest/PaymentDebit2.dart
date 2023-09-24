@@ -1,4 +1,4 @@
-import 'Cart2.dart';
+import 'package:amtelbot/Membership/Payment/PaymentSuccessful.dart';
 import 'Payment1.dart';
 import 'package:flutter/material.dart';
 
@@ -11,6 +11,12 @@ class Paymentdebit2 extends StatelessWidget {
     Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
       return Payment1(totalPrice: totalPrice,);
   }));
+  }
+
+  void navigateNextPage2(BuildContext ctx) {
+    Navigator.of(ctx).push(MaterialPageRoute(builder: (_) {
+      return Paymentsuccessful(totalPrice: totalPrice,);
+    }));
   }
 
   @override
@@ -55,10 +61,42 @@ class Paymentdebit2 extends StatelessWidget {
                 ),
               ),
 
+
+              // Done button
+              Positioned(
+                left: 803,
+                top: 736,
+                child:
+                TextButton(
+                  onPressed:  () {navigateNextPage2(context);},
+                  style:  TextButton.styleFrom (
+                    padding:  EdgeInsets.zero,
+                  ),
+                  child: Container(
+                    width: 251,
+                    height: 88,
+                    decoration: ShapeDecoration(
+                      color: Colors.white,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      shadows: [
+                        BoxShadow(
+                          color: Color(0xFF3197FD),
+                          blurRadius: 4,
+                          offset: Offset(0, 4),
+                          spreadRadius: 0,
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+
               // Back button
               Positioned(
-                left: 649, 
-                top: 723,  
+                left: 497,
+                top: 736,
                 child:
               TextButton(
               onPressed:  () {navigateNextPage(context);},
@@ -87,10 +125,24 @@ class Paymentdebit2 extends StatelessWidget {
             ),
 
               Positioned(
-                left: 733,
-                top: 745,
+                left: 581,
+                top: 758,
                 child: Text(
                   'Back',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 36,
+                    fontFamily: 'Inter',
+                    fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+
+              Positioned(
+                left: 861,
+                top: 758,
+                child: Text(
+                  'Done',
                   style: TextStyle(
                     color: Colors.black,
                     fontSize: 36,

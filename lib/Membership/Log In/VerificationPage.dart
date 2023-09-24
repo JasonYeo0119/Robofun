@@ -84,7 +84,7 @@ class _VerificationPageState extends State<VerificationPage> {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -101,7 +101,7 @@ class _VerificationPageState extends State<VerificationPage> {
                   height: 864,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/775x864"),
+                      image: NetworkImage("https://kimola.com/images/mh/posts/e527e3e3-3866-40e1-b66e-203e49c2c755.jpg"),
                       fit: BoxFit.fill,
                     ),
                   ),
@@ -471,7 +471,7 @@ class _VerificationPageState extends State<VerificationPage> {
                   height: 120,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/120x120"),
+                      image: NetworkImage("https://png.pngtree.com/png-vector/20190223/ourmid/pngtree-vector-camera-icon-png-image_696326.jpg"),
                       fit: BoxFit.contain,
                     ),
                   ),

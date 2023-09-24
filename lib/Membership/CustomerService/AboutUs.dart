@@ -18,7 +18,7 @@ void navigateNextPage(BuildContext ctx) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -36,7 +36,7 @@ void navigateNextPage(BuildContext ctx) {
                     color: Colors.black,
                     fontSize: 48,
                     fontFamily: 'Inter',
-                    fontWeight: FontWeight.w400,
+                    fontWeight: FontWeight.w700,
                   ),
                 ),
               ),
@@ -44,11 +44,11 @@ void navigateNextPage(BuildContext ctx) {
                 left: 116,
                 top: 175,
                 child: Container(
-                  width: 497,
+                  width: 345,
                   height: 345,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/497x345"),
+                      image: NetworkImage("https://via.placeholder.com/345x345"),
                       fit: BoxFit.fill,
                     ),
                     boxShadow: [
@@ -68,7 +68,7 @@ void navigateNextPage(BuildContext ctx) {
                 child: SizedBox(
                   width: 1106,
                   child: Text(
-                    'Happy Supermarket',
+                    'Smile Supermarket',
                     style: TextStyle(
                       color: Color(0xFF7F599A),
                       fontSize: 32,
@@ -79,7 +79,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 645,
+                left: 550,
                 top: 175,
                 child: SizedBox(
                   width: 788,
@@ -102,7 +102,7 @@ void navigateNextPage(BuildContext ctx) {
                             color: Colors.black,
                             fontSize: 24,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 4.80,
                           ),
                         ),
@@ -112,7 +112,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 645,
+                left: 550,
                 top: 291,
                 child: SizedBox(
                   width: 594,
@@ -130,12 +130,12 @@ void navigateNextPage(BuildContext ctx) {
                           ),
                         ),
                         TextSpan(
-                          text: 'happysupermarket@gmail.com',
+                          text: 'smilesupermarket@gmail.com',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 24,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 4.80,
                           ),
                         ),
@@ -145,7 +145,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 645,
+                left: 550,
                 top: 446,
                 child: SizedBox(
                   width: 594,
@@ -168,7 +168,7 @@ void navigateNextPage(BuildContext ctx) {
                             color: Colors.black,
                             fontSize: 24,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 4.80,
                           ),
                         ),
@@ -178,7 +178,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 645,
+                left: 550,
                 top: 349,
                 child: SizedBox(
                   width: 695,
@@ -196,12 +196,12 @@ void navigateNextPage(BuildContext ctx) {
                           ),
                         ),
                         TextSpan(
-                          text: ' T23, Jalan Happy, Jelutong, \n11600 Georgetown, Penang.',
+                          text: ' T23, Jalan Smile, Jelutong, \n11600 Georgetown, Penang.',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 24,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 4.80,
                           ),
                         ),
@@ -211,7 +211,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 645,
+                left: 550,
                 top: 233,
                 child: SizedBox(
                   width: 703,
@@ -234,7 +234,7 @@ void navigateNextPage(BuildContext ctx) {
                             color: Colors.black,
                             fontSize: 24,
                             fontFamily: 'Inter',
-                            fontWeight: FontWeight.w400,
+                            fontWeight: FontWeight.w700,
                             letterSpacing: 4.80,
                           ),
                         ),
@@ -307,7 +307,7 @@ void navigateNextPage(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 150,
+                left: 135,
                 top: 553,
                 child: SizedBox(
                   width: 1155,
@@ -318,7 +318,7 @@ void navigateNextPage(BuildContext ctx) {
                           text: 'Welcome to',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 30,
+                            fontSize: 24,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w400,
                             letterSpacing: 3,
@@ -328,17 +328,17 @@ void navigateNextPage(BuildContext ctx) {
                           text: ' ',
                           style: TextStyle(
                             color: Color(0xFF7F599A),
-                            fontSize: 30,
+                            fontSize: 24,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w400,
                             letterSpacing: 3,
                           ),
                         ),
                         TextSpan(
-                          text: 'Happy Supermarket',
+                          text: 'Smile Supermarket',
                           style: TextStyle(
                             color: Color(0xFF7F599A),
-                            fontSize: 30,
+                            fontSize: 26,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w700,
                             letterSpacing: 3,
@@ -348,7 +348,7 @@ void navigateNextPage(BuildContext ctx) {
                           text: ', your one-stop destination for quality groceries and exceptional shopping experiences. With a deep commitment to serving our community, we take pride in providing a diverse range of products, outstanding customer service, and a dedication to sustainability.',
                           style: TextStyle(
                             color: Colors.black,
-                            fontSize: 30,
+                            fontSize: 24,
                             fontFamily: 'Inter',
                             fontWeight: FontWeight.w400,
                             letterSpacing: 3,
