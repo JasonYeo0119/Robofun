@@ -64,7 +64,7 @@ void navigateNextPage7(BuildContext ctx) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -107,18 +107,13 @@ void navigateNextPage7(BuildContext ctx) {
                       style:  TextButton.styleFrom (
                       padding:  EdgeInsets.zero,
                       ), 
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
+                child: Icon(
+                  Icons.account_circle_outlined,
+                  size: 90,
+                  color: Colors.black,
                     ),
                   ),
                 ),
-                ),
-              ),
               Positioned(
                 left: 215,
                 top: 41,
@@ -133,19 +128,19 @@ void navigateNextPage7(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 24,
-                top: 172,
+                left: 9,
+                top: 155,
                 child: TextButton(
                       onPressed:  () {navigateNextPage6(context);},
                       style:  TextButton.styleFrom (
                       padding:  EdgeInsets.zero,
                       ), 
                 child: Container(
-                  width: 90,
-                  height: 90,
+                  width: 120,
+                  height: 120,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/014/391/893/small/home-icon-isolated-on-transparent-background-black-symbol-for-your-design-free-png.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -160,7 +155,7 @@ void navigateNextPage7(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.thenounproject.com/png/2821166-200.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -355,7 +350,7 @@ void navigateNextPage7(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://banner2.cleanpng.com/20190304/lw/kisspng-customer-service-computer-icons-technical-support-customer-service-svg-png-icon-free-download-4212-5c7cf7dc7cae13.2554127915516937885107.jpg"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -449,42 +444,42 @@ void navigateNextPage7(BuildContext ctx) {
                 ),
               ),
               Positioned(
-                left: 237,
+                left: 235,
                 top: 428,
                 child: Container(
                   width: 90,
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://cdn-icons-png.flaticon.com/512/4658/4658825.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
                 ),
               ),
               Positioned(
-                left: 237,
-                top: 627,
+                left: 241,
+                top: 632,
                 child: Container(
-                  width: 90,
-                  height: 90,
+                  width: 80,
+                  height: 80,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://e7.pngegg.com/pngimages/211/607/png-clipart-computer-icons-information-about-us-miscellaneous-logo.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
                 ),
               ),
               Positioned(
-                left: 905,
-                top: 231,
+                left: 909,
+                top: 238,
                 child: Container(
-                  width: 90,
-                  height: 90,
+                  width: 80,
+                  height: 80,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://toppng.com/uploads/preview/map-command-comments-map-icon-11562897555gcydeuswdx.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -498,7 +493,7 @@ void navigateNextPage7(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/previews/010/042/805/original/faq-icon-help-symbol-clean-and-modern-illustration-for-a-website-or-mobile-applications-isolated-in-white-background-best-used-for-frequently-asked-question-icon-free-vector.jpg"),
                       fit: BoxFit.contain,
                     ),
                   ),

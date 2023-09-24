@@ -19,11 +19,11 @@ class Emptycart2 extends StatelessWidget {
       children: [
         Container(
           width: 1550,
-          height: 864,
+          height: 790,
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -65,7 +65,7 @@ class Emptycart2 extends StatelessWidget {
                   height: 283,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/289x283"),
+                      image: NetworkImage("https://cdn-icons-png.flaticon.com/512/2762/2762885.png"),
                       fit: BoxFit.fill,
                     ),
                   ),

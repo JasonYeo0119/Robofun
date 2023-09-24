@@ -29,7 +29,7 @@ class Paymentdebit2 extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -137,7 +137,6 @@ class Paymentdebit2 extends StatelessWidget {
                   ),
                 ),
               ),
-
               Positioned(
                 left: 861,
                 top: 758,
@@ -165,53 +164,95 @@ class Paymentdebit2 extends StatelessWidget {
                 ),
               ),
               Positioned(
-                left: 832,
+                left: 177,
                 top: 460,
                 child: Container(
-                  width: 230,
+                  width: 240,
                   height: 166,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/230x166"),
+                      image: NetworkImage("https://cdn.icon-icons.com/icons2/1178/PNG/512/mastercard_82049.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 506,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://cdn.icon-icons.com/icons2/1259/PNG/512/1495815261-jd08_84586.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 832,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://1000logos.net/wp-content/uploads/2021/04/UnionPay-logo.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 1177,
+                top: 460,
+                child: Container(
+                  width: 240,
+                  height: 166,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/American_Express_logo_%282018%29.svg/1200px-American_Express_logo_%282018%29.svg.png"),
                       fit: BoxFit.fill,
                     ),
                   ),
                 ),
               ),
 
-  Positioned(
-  left: 671,
-  top: 286,
-  child: Row(
-    children: [
-      Text(
-        'RM',
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 40,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
-          letterSpacing: 7.40,
-        ),
-      ),
-      Text(
-        totalPrice.toStringAsFixed(2), // Display the totalPrice value here
-        style: TextStyle(
-          color: Colors.black,
-          fontSize: 40,
-          fontFamily: 'Inter',
-          fontWeight: FontWeight.w700,
-          letterSpacing: 7.40,
-        ),
-      ),
-    ],
-  ),
-),
+              Positioned(
+              left: 671,
+              top: 286,
+              child: Row(
+                children: [
+                  Text(
+                    'RM',
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 7.40,
+                    ),
+                  ),
+                  Text(
+                    totalPrice.toStringAsFixed(2), // Display the totalPrice value here
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 40,
+                      fontFamily: 'Inter',
+                      fontWeight: FontWeight.w700,
+                      letterSpacing: 7.40,
+                    ),
+                  ),
+                ],
+              ),
+            ),
 
-            ],
-          ),
-        ),
-      ],
-    );
-  }
-}
+                        ],
+                      ),
+                    ),
+                  ],
+                );
+              }
+            }

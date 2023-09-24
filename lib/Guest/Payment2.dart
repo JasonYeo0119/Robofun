@@ -33,7 +33,7 @@ class Payment2 extends StatelessWidget {
   }));
   }
 
-  @override
+ @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -346,6 +346,20 @@ class Payment2 extends StatelessWidget {
                     fontSize: 36,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 629,
+                top: 200,
+                child: Container(
+                  width: 289,
+                  height: 283,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://icones.pro/wp-content/uploads/2021/03/icone-de-portefeuille-d-argent-violet.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),

@@ -44,7 +44,7 @@ class Payment1 extends StatelessWidget {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -277,6 +277,20 @@ class Payment1 extends StatelessWidget {
                     fontSize: 36,
                     fontFamily: 'Inter',
                     fontWeight: FontWeight.w400,
+                  ),
+                ),
+              ),
+              Positioned(
+                left: 629,
+                top: 200,
+                child: Container(
+                  width: 289,
+                  height: 283,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://www.transparentpng.com/thumb/credit-card/8p4jX1-blank-credit-card-pic.png"),
+                      fit: BoxFit.fill,
+                    ),
                   ),
                 ),
               ),

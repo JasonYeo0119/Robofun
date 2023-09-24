@@ -12,8 +12,8 @@ class CameraService {
 
   Future<CameraDescription> _getCameraDescription() async {
     List<CameraDescription> cameras = await availableCameras();
-    return cameras.firstWhere((CameraDescription camera) =>
-    camera.lensDirection == CameraLensDirection.front);
+    return cameras.firstWhere(
+        (CameraDescription camera) => camera.lensDirection == CameraLensDirection.front);
   }
 
   Future _setupCameraController({
@@ -27,8 +27,14 @@ class CameraService {
     await _cameraController?.initialize();
   }
 
-  dispose() async {
+  /// Set the camera effect to normal color (remove any color filter).
+  void setNormalColorEffect() {
+    _cameraController?.setExposureMode(ExposureMode.auto);
+  }
+
+  void dispose() async {
     await _cameraController?.dispose();
     _cameraController = null;
   }
+  
 }

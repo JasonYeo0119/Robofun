@@ -84,7 +84,7 @@ void navigateNextPage3(BuildContext ctx) {
   }
 
 
-  @override
+@override
   Widget build(BuildContext context) {
     return MaterialApp( 
       home: Scaffold( 
@@ -96,7 +96,7 @@ void navigateNextPage3(BuildContext ctx) {
           clipBehavior: Clip.antiAlias,
           decoration: ShapeDecoration(
             image: DecorationImage(
-              image: NetworkImage("https://via.placeholder.com/1550x864"),
+              image: NetworkImage("https://static.vecteezy.com/system/resources/previews/003/031/764/original/blue-wide-background-with-linear-blurred-gradient-free-vector.jpg"),
               fit: BoxFit.fill,
             ),
             shape: RoundedRectangleBorder(
@@ -146,7 +146,7 @@ void navigateNextPage3(BuildContext ctx) {
                   height: 90,
                   decoration: BoxDecoration(
                     image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
+                      image: NetworkImage("https://static.thenounproject.com/png/2821166-200.png"),
                       fit: BoxFit.contain,
                     ),
                   ),
@@ -161,77 +161,29 @@ void navigateNextPage3(BuildContext ctx) {
                 style:  TextButton.styleFrom (
                 padding:  EdgeInsets.zero,
                 ),
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
+                child: Icon(
+                  Icons.account_circle_outlined,
+                  size: 90,
+                  color: Colors.black,
                     ),
                   ),
                 ),
-                ),
-              ),
-              Positioned(
-                left: 24,
-                top: 172,
-                child: Container(
-                  width: 90,
-                  height: 90,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: NetworkImage("https://via.placeholder.com/90x90"),
-                      fit: BoxFit.contain,
-                    ),
-                  ),
-                ),
-              ),
-            
-            // Remove
-            // Positioned(
-            //     left: 1178,
-            //     top: 43,
-            //     child:
-            //   TextButton(
-            //   onPressed:  () {navigateNextPage5(context);},
-            //   style:  TextButton.styleFrom (
-            //   padding:  EdgeInsets.zero,
-            //   ),
-            //     child: Container(
-            //       width: 182,
-            //       height: 72,
-            //       decoration: ShapeDecoration(
-            //         color: Colors.white,
-            //         shape: RoundedRectangleBorder(
-            //           borderRadius: BorderRadius.circular(15),
-            //         ),
-            //         shadows: [
-            //           BoxShadow(
-            //             color: Color(0xFF3197FD),
-            //             blurRadius: 4,
-            //             offset: Offset(0, 4),
-            //             spreadRadius: 0,
-            //           )
-            //         ],
-            //     ), 
-            //     ),
-            //   ),
-            // ),
 
-              // Positioned(
-              //   left: 1208,
-              //   top: 60,
-              //   child: Text(
-              //     'Remove',
-              //     style: TextStyle(
-              //       color: Colors.black,
-              //       fontSize: 32,
-              //       fontFamily: 'Inter',
-              //       fontWeight: FontWeight.w400,
-              //     ),
-              //   ),
-              // ),
+              Positioned(
+                left: 9,
+                top: 155,
+                child: Container(
+                  width: 120,
+                  height: 120,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://static.vecteezy.com/system/resources/thumbnails/014/391/893/small/home-icon-isolated-on-transparent-background-black-symbol-for-your-design-free-png.png"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ),
+              
               Positioned(
                 left: 190,
                 top: 35,
@@ -458,7 +410,20 @@ void navigateNextPage3(BuildContext ctx) {
                       )
                     : SizedBox(), // Hide if there is no current product
               ),
-              
+              Positioned(
+                left: 1431,
+                top: 53,
+                child: Container(
+                  width: 55,
+                  height: 55,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://icon-library.com/images/shopping-cart-icon-white/shopping-cart-icon-white-11.jpg"),
+                      fit: BoxFit.contain,
+                    ),
+                  ),
+                ),
+              ), 
             ],
         ),
       ),

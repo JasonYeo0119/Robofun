@@ -306,6 +306,20 @@ class Payment3 extends StatelessWidget {
                   ),
                 ),
               ),
+              Positioned(
+                left: 629,
+                top: 200,
+                child: Container(
+                  width: 289,
+                  height: 283,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: NetworkImage("https://cdn-icons-png.flaticon.com/512/3179/3179682.png"),
+                      fit: BoxFit.fill,
+                    ),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
